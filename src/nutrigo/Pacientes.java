@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author Rene
  */
-public class Inicio extends javax.swing.JFrame {
+public class Pacientes extends javax.swing.JFrame {
 
     /**
-     * Creates new form Inicio
+     * Creates new form Pacientes
      */
-    public Inicio() {
+    public Pacientes() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
@@ -48,9 +48,9 @@ public class Inicio extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JToolBar.Separator();
         btn_perfil = new javax.swing.JButton();
         btn_cerrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Inicio");
         setMinimumSize(new java.awt.Dimension(900, 500));
 
         jPanel1.setBackground(new java.awt.Color(131, 214, 167));
@@ -68,7 +68,6 @@ public class Inicio extends javax.swing.JFrame {
         btn_inicio.setBorderPainted(false);
         btn_inicio.setContentAreaFilled(false);
         btn_inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_inicio.setEnabled(false);
         btn_inicio.setFocusable(false);
         btn_inicio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_inicio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -96,6 +95,7 @@ public class Inicio extends javax.swing.JFrame {
         btn_pacientes.setBorderPainted(false);
         btn_pacientes.setContentAreaFilled(false);
         btn_pacientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_pacientes.setEnabled(false);
         btn_pacientes.setFocusable(false);
         btn_pacientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_pacientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -223,7 +223,7 @@ public class Inicio extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_cerrar))
         );
         jPanel1Layout.setVerticalGroup(
@@ -232,71 +232,66 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jButton1.setBackground(new java.awt.Color(102, 255, 102));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/agregar.png"))); // NOI18N
+        jButton1.setText("Agregar nuevo");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(142, 142, 142))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 471, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(jButton1)
+                .addGap(0, 385, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_inicioActionPerformed
-
-    private void btn_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pacientesActionPerformed
-        Pacientes ventana = new Pacientes();
-        ventana.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btn_pacientesActionPerformed
-
-    private void btn_dietasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dietasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_dietasActionPerformed
-
-    private void btn_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_citasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_citasActionPerformed
-
-    private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_perfilActionPerformed
-
-    private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
-        int x = JOptionPane.showConfirmDialog(null, "Estas seguro(a) que desea cerrar sesion", "Cerrar sesion", JOptionPane.YES_NO_OPTION);
-        if (x==0)
-        {
-            this.setVisible(false);
-            Login l = new Login();
-            l.setVisible(true);
-        }
-    }//GEN-LAST:event_btn_cerrarActionPerformed
-
     private void btn_inicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicioMouseEntered
-        
+        btn_inicio.setForeground(Color.white);
+        btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Home_2.png")));
     }//GEN-LAST:event_btn_inicioMouseEntered
 
     private void btn_inicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicioMouseExited
-        
+        btn_inicio.setForeground(Color.black);
+        btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Home.png")));
     }//GEN-LAST:event_btn_inicioMouseExited
 
+    private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
+        Inicio ventana = new Inicio();
+        ventana.setVisible(true);
+        dispose(); 
+    }//GEN-LAST:event_btn_inicioActionPerformed
+
     private void btn_pacientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pacientesMouseEntered
-        btn_pacientes.setForeground(Color.white);
-        btn_pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Pacientes_2.png")));
+        
     }//GEN-LAST:event_btn_pacientesMouseEntered
 
     private void btn_pacientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pacientesMouseExited
-        btn_pacientes.setForeground(Color.black);
-        btn_pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Pacientes.png")));
+        
     }//GEN-LAST:event_btn_pacientesMouseExited
+
+    private void btn_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pacientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pacientesActionPerformed
 
     private void btn_dietasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dietasMouseEntered
         btn_dietas.setForeground(Color.white);
@@ -308,6 +303,10 @@ public class Inicio extends javax.swing.JFrame {
         btn_dietas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Dietas.png")));
     }//GEN-LAST:event_btn_dietasMouseExited
 
+    private void btn_dietasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dietasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_dietasActionPerformed
+
     private void btn_citasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_citasMouseEntered
         btn_citas.setForeground(Color.white);
         btn_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Citas_2.png")));
@@ -317,6 +316,10 @@ public class Inicio extends javax.swing.JFrame {
         btn_citas.setForeground(Color.black);
         btn_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Citas.png")));
     }//GEN-LAST:event_btn_citasMouseExited
+
+    private void btn_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_citasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_citasActionPerformed
 
     private void btn_perfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseEntered
         btn_perfil.setForeground(Color.white);
@@ -328,6 +331,10 @@ public class Inicio extends javax.swing.JFrame {
         btn_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Perfil.png")));
     }//GEN-LAST:event_btn_perfilMouseExited
 
+    private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_perfilActionPerformed
+
     private void btn_cerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrarMouseEntered
         btn_cerrar.setForeground(Color.white);
         btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Salir_2.png")));
@@ -337,6 +344,21 @@ public class Inicio extends javax.swing.JFrame {
         btn_cerrar.setForeground(Color.black);
         btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Salir.png")));
     }//GEN-LAST:event_btn_cerrarMouseExited
+
+    private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
+        int x = JOptionPane.showConfirmDialog(null, "Estas seguro(a) que desea cerrar sesion", "Cerrar sesion", JOptionPane.YES_NO_OPTION);
+        if (x==0)
+        {
+            this.setVisible(false);
+            Login l = new Login();
+            l.setVisible(true);
+        }
+    }//GEN-LAST:event_btn_cerrarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Ingresar_paciente_1 ingresar = new Ingresar_paciente_1();
+        ingresar.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,20 +377,20 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                new Pacientes().setVisible(true);
             }
         });
     }
@@ -380,6 +402,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btn_inicio;
     private javax.swing.JButton btn_pacientes;
     private javax.swing.JButton btn_perfil;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;

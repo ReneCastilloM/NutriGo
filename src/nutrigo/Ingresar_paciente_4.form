@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Ingresar juevo paciente"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ca" green="e4" red="af" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="edema" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="unas_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="nervioso_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nervioso_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nervioso_3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="boca_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="boca_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="boca_3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="boca_5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="boca_6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="boca_4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cuello_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cuello_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="199" max="32767" attributes="0"/>
+                                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="obesidad" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="esqueleto_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="esqueleto_3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="esqueleto_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="gastro_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="rostro_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rostro_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rostro_3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ojos_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ojos_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ojos_3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ojos_5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ojos_4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="dientes_1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dientes_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dientes_3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="piel_7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="unas_1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="urinaria_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="urinaria_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="torax_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="torax_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="torax_3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="torax_4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="edema" min="-2" max="-2" attributes="0"/>
+                      <Component id="obesidad" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="nervioso_1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="nervioso_2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="nervioso_3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="unas_1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="unas_2" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cuello_1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cuello_2" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="dientes_1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="dientes_2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="dientes_3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="38" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="piel_1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="piel_2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="piel_3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="piel_4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="piel_5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="piel_6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="piel_7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ojos_1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="ojos_2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="ojos_3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="ojos_4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="ojos_5" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                                      <Component id="torax_1" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="torax_2" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="torax_3" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="torax_4" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="urinaria_1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="urinaria_2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="boca_1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="boca_2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="boca_3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="boca_4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="boca_5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="boca_6" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="esqueleto_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="gastro_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="esqueleto_2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="esqueleto_3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jButton1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="jButton2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="rostro_1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="rostro_2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="rostro_3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Datos cl&#xed;nicos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Seleccione los signos clinicos con los que cuenta el paciente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="edema">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Edema"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Falta de brillo en cabello"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Falta de elastisidad"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="cuello_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agrandamiento de tiroides"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="dientes_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Perdida de esmalte"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="dientes_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fluorosis"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rostro_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cara de luna"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="dientes_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Falta de dientes, caries"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="nervioso_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confusion mental"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="unas_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Despigmentacion, grietas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="unas_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="U&#xf1;a coiliniquia"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unas_1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cabello signo de bandera"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="obesidad">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Obesidad"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="nervioso_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dolor de cabeza, vomito o mareos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="nervioso_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Disminucion de reflejos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="cuello_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agrandamiento de paratiroides"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Problemas de cicatrizacion"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ceborrea  nasolabial"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="piel_6ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Piel escamosa"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="piel_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Escaces de cabello"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Siguiente"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Piel"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="U&#xf1;as"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ojos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Rostro"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Boca"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="boca_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atrofia papilar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rostro_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Parestesia facial"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rostro_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Despigmentacion o hinchazon"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="boca_6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atrofia de la lengua"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="boca_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Glocitis"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="boca_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Lengua magenta o escarlata"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="boca_5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Disminucion de gusto"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="boca_4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Encias hinchadas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dientes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cuello"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Torax"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sistema Nerviosos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="ojos_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Manchas de bitot"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="ojos_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Keratomalasia"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="ojos_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Xerosis"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="ojos_4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ceguera nocturna"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="ojos_5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Xantelasma"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="gastro_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Epatomegalia"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gastro_1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="torax_4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Falla cardiaca"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="torax_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Disminucion de funcionamiento pulmonar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="torax_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Falta de respiracion, fatiga"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="torax_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Disminusion de masa y fuerza muscular"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="urinaria_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Orina oscura y concentrada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="esqueleto_3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Piernas arqueadas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="urinaria_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Orina clara y diluida"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="esqueleto_2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dolor en pantorrilla y muslos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vias urinarias"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="esqueleto_1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dolor de articulaciones"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sistema esqueleto-muscular"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sistema gastrointestinal"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
