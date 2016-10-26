@@ -34,65 +34,66 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        edema = new javax.swing.JRadioButton();
-        piel_1 = new javax.swing.JRadioButton();
-        piel_7 = new javax.swing.JRadioButton();
-        cuello_1 = new javax.swing.JRadioButton();
-        dientes_3 = new javax.swing.JRadioButton();
-        dientes_1 = new javax.swing.JRadioButton();
-        rostro_1 = new javax.swing.JRadioButton();
-        dientes_2 = new javax.swing.JRadioButton();
-        nervioso_1 = new javax.swing.JRadioButton();
-        unas_2 = new javax.swing.JRadioButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_siguiente = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         unas_1 = new javax.swing.JRadioButton();
-        piel_2 = new javax.swing.JRadioButton();
-        obesidad = new javax.swing.JRadioButton();
-        nervioso_3 = new javax.swing.JRadioButton();
-        nervioso_2 = new javax.swing.JRadioButton();
+        unas_2 = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        cuello_1 = new javax.swing.JRadioButton();
         cuello_2 = new javax.swing.JRadioButton();
-        piel_4 = new javax.swing.JRadioButton();
-        piel_6 = new javax.swing.JRadioButton();
-        piel_5 = new javax.swing.JRadioButton();
-        piel_3 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        boca_1 = new javax.swing.JRadioButton();
+        jPanel4 = new javax.swing.JPanel();
+        nervioso_1 = new javax.swing.JRadioButton();
+        nervioso_2 = new javax.swing.JRadioButton();
+        nervioso_3 = new javax.swing.JRadioButton();
+        jPanel5 = new javax.swing.JPanel();
+        rostro_1 = new javax.swing.JRadioButton();
         rostro_2 = new javax.swing.JRadioButton();
         rostro_3 = new javax.swing.JRadioButton();
-        boca_6 = new javax.swing.JRadioButton();
-        boca_2 = new javax.swing.JRadioButton();
-        boca_3 = new javax.swing.JRadioButton();
-        boca_5 = new javax.swing.JRadioButton();
-        boca_4 = new javax.swing.JRadioButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        dientes_1 = new javax.swing.JRadioButton();
+        dientes_2 = new javax.swing.JRadioButton();
+        dientes_3 = new javax.swing.JRadioButton();
+        jPanel7 = new javax.swing.JPanel();
         ojos_1 = new javax.swing.JRadioButton();
         ojos_2 = new javax.swing.JRadioButton();
         ojos_3 = new javax.swing.JRadioButton();
         ojos_4 = new javax.swing.JRadioButton();
         ojos_5 = new javax.swing.JRadioButton();
-        gastro_1 = new javax.swing.JRadioButton();
-        torax_4 = new javax.swing.JRadioButton();
-        torax_3 = new javax.swing.JRadioButton();
+        jPanel8 = new javax.swing.JPanel();
+        piel_1 = new javax.swing.JRadioButton();
+        piel_2 = new javax.swing.JRadioButton();
+        piel_3 = new javax.swing.JRadioButton();
+        piel_4 = new javax.swing.JRadioButton();
+        piel_5 = new javax.swing.JRadioButton();
+        piel_6 = new javax.swing.JRadioButton();
+        piel_7 = new javax.swing.JRadioButton();
+        jPanel9 = new javax.swing.JPanel();
+        boca_1 = new javax.swing.JRadioButton();
+        boca_2 = new javax.swing.JRadioButton();
+        boca_3 = new javax.swing.JRadioButton();
+        boca_4 = new javax.swing.JRadioButton();
+        boca_5 = new javax.swing.JRadioButton();
+        boca_6 = new javax.swing.JRadioButton();
+        jPanel12 = new javax.swing.JPanel();
         torax_2 = new javax.swing.JRadioButton();
+        torax_3 = new javax.swing.JRadioButton();
+        torax_4 = new javax.swing.JRadioButton();
         torax_1 = new javax.swing.JRadioButton();
-        urinaria_1 = new javax.swing.JRadioButton();
-        esqueleto_3 = new javax.swing.JRadioButton();
-        urinaria_2 = new javax.swing.JRadioButton();
-        esqueleto_2 = new javax.swing.JRadioButton();
-        jLabel11 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
         esqueleto_1 = new javax.swing.JRadioButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        esqueleto_2 = new javax.swing.JRadioButton();
+        esqueleto_3 = new javax.swing.JRadioButton();
+        jPanel14 = new javax.swing.JPanel();
+        urinaria_1 = new javax.swing.JRadioButton();
+        urinaria_2 = new javax.swing.JRadioButton();
+        jPanel15 = new javax.swing.JPanel();
+        gastro_1 = new javax.swing.JRadioButton();
+        jPanel16 = new javax.swing.JPanel();
+        edema = new javax.swing.JRadioButton();
+        obesidad = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ingresar juevo paciente");
 
         jPanel1.setBackground(new java.awt.Color(175, 228, 202));
@@ -102,25 +103,22 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
 
         jLabel1.setText("Seleccione los signos clinicos con los que cuenta el paciente");
 
-        edema.setText("Edema");
+        btn_cancelar.setText("Cancelar");
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
 
-        piel_1.setText("Falta de brillo en cabello");
+        btn_siguiente.setText("Siguiente");
+        btn_siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_siguienteActionPerformed(evt);
+            }
+        });
 
-        piel_7.setText("Falta de elastisidad");
-
-        cuello_1.setText("Agrandamiento de tiroides");
-
-        dientes_3.setText("Perdida de esmalte");
-
-        dientes_1.setText("Fluorosis");
-
-        rostro_1.setText("Cara de luna");
-
-        dientes_2.setText("Falta de dientes, caries");
-
-        nervioso_1.setText("Confusion mental");
-
-        unas_2.setText("Despigmentacion, grietas");
+        jPanel2.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Uñas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
         unas_1.setText("Uña coiliniquia");
         unas_1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,76 +127,158 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
             }
         });
 
-        piel_2.setText("Cabello signo de bandera");
+        unas_2.setText("Despigmentacion, grietas");
 
-        obesidad.setText("Obesidad");
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(unas_1)
+                    .addComponent(unas_2))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(unas_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(unas_2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        nervioso_3.setText("Dolor de cabeza, vomito o mareos");
+        jPanel3.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cuello", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        nervioso_2.setText("Disminucion de reflejos");
+        cuello_1.setText("Agrandamiento de tiroides");
 
         cuello_2.setText("Agrandamiento de paratiroides");
 
-        piel_4.setText("Problemas de cicatrizacion");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cuello_1)
+                    .addComponent(cuello_2))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cuello_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cuello_2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        piel_6.setText("Ceborrea  nasolabial");
-        piel_6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                piel_6ActionPerformed(evt);
-            }
-        });
+        jPanel4.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Sistema Nervioso", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        piel_5.setText("Piel escamosa");
+        nervioso_1.setText("Confusion mental");
 
-        piel_3.setText("Escaces de cabello");
+        nervioso_2.setText("Disminucion de reflejos");
 
-        jButton1.setText("Cancelar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        nervioso_3.setText("Dolor de cabeza, vomito o mareos");
 
-        jButton2.setText("Siguiente");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nervioso_1)
+                    .addComponent(nervioso_2)
+                    .addComponent(nervioso_3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nervioso_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nervioso_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nervioso_3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        jLabel2.setText("Piel");
+        jPanel5.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Rostro", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        jLabel3.setText("Uñas");
-
-        jLabel4.setText("Ojos");
-
-        jLabel5.setText("Rostro");
-
-        jLabel6.setText("Boca");
-
-        boca_1.setText("Atrofia papilar");
+        rostro_1.setText("Cara de luna");
 
         rostro_2.setText("Parestesia facial");
 
         rostro_3.setText("Despigmentacion o hinchazon");
 
-        boca_6.setText("Atrofia de la lengua");
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rostro_1)
+                    .addComponent(rostro_2)
+                    .addComponent(rostro_3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rostro_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rostro_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, Short.MAX_VALUE)
+                .addComponent(rostro_3)
+                .addContainerGap())
+        );
 
-        boca_2.setText("Glocitis");
+        jPanel6.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Dientes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        boca_3.setText("Lengua magenta o escarlata");
+        dientes_1.setText("Fluorosis");
 
-        boca_5.setText("Disminucion de gusto");
+        dientes_2.setText("Falta de dientes, caries");
 
-        boca_4.setText("Encias hinchadas");
+        dientes_3.setText("Perdida de esmalte");
 
-        jLabel7.setText("Dientes");
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dientes_1)
+                    .addComponent(dientes_2)
+                    .addComponent(dientes_3))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dientes_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dientes_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dientes_3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        jLabel8.setText("Cuello");
-
-        jLabel9.setText("Torax");
-
-        jLabel10.setText("Sistema Nerviosos");
+        jPanel7.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Ojos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
         ojos_1.setText("Manchas de bitot");
 
@@ -210,6 +290,244 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
 
         ojos_5.setText("Xantelasma");
 
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ojos_1)
+                    .addComponent(ojos_2)
+                    .addComponent(ojos_3)
+                    .addComponent(ojos_5)
+                    .addComponent(ojos_4))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ojos_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ojos_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ojos_3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ojos_4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ojos_5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel8.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Piel", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        piel_1.setText("Falta de brillo en cabello");
+
+        piel_2.setText("Cabello signo de bandera");
+
+        piel_3.setText("Escaces de cabello");
+
+        piel_4.setText("Problemas de cicatrizacion");
+
+        piel_5.setText("Piel escamosa");
+
+        piel_6.setText("Ceborrea  nasolabial");
+        piel_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                piel_6ActionPerformed(evt);
+            }
+        });
+
+        piel_7.setText("Falta de elastisidad");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(piel_6)
+                    .addComponent(piel_2)
+                    .addComponent(piel_1)
+                    .addComponent(piel_3)
+                    .addComponent(piel_4)
+                    .addComponent(piel_5)
+                    .addComponent(piel_7))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(piel_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(piel_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(piel_3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(piel_4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(piel_5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(piel_6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(piel_7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel9.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Boca", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        boca_1.setText("Atrofia papilar");
+
+        boca_2.setText("Glocitis");
+
+        boca_3.setText("Lengua magenta o escarlata");
+
+        boca_4.setText("Encias hinchadas");
+
+        boca_5.setText("Disminucion de gusto");
+
+        boca_6.setText("Atrofia de la lengua");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(boca_1)
+                    .addComponent(boca_2)
+                    .addComponent(boca_3)
+                    .addComponent(boca_5)
+                    .addComponent(boca_6)
+                    .addComponent(boca_4))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(boca_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boca_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boca_3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boca_4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boca_5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boca_6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel12.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Torax", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        torax_2.setText("Falta de respiracion, fatiga");
+
+        torax_3.setText("Disminucion de funcionamiento pulmonar");
+
+        torax_4.setText("Falla cardiaca");
+
+        torax_1.setText("Disminusion de masa y fuerza muscular");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(torax_1)
+                    .addComponent(torax_2)
+                    .addComponent(torax_3)
+                    .addComponent(torax_4))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(torax_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(torax_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(torax_3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(torax_4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel13.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Sistema Esqueleto-Muscular", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        esqueleto_1.setText("Dolor de articulaciones");
+
+        esqueleto_2.setText("Dolor en pantorrilla y muslos");
+
+        esqueleto_3.setText("Piernas arqueadas");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(esqueleto_2)
+                    .addComponent(esqueleto_3)
+                    .addComponent(esqueleto_1))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(esqueleto_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(esqueleto_2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(esqueleto_3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel14.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Vias Urinarias", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
+        urinaria_1.setText("Orina oscura y concentrada");
+
+        urinaria_2.setText("Orina clara y diluida");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(urinaria_1)
+                    .addComponent(urinaria_2))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(urinaria_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(urinaria_2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel15.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Sistema Gastrointestinal", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+
         gastro_1.setText("Epatomegalia");
         gastro_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,29 +535,50 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
             }
         });
 
-        torax_4.setText("Falla cardiaca");
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gastro_1)
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gastro_1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        torax_3.setText("Disminucion de funcionamiento pulmonar");
+        jPanel16.setBackground(new java.awt.Color(175, 228, 202));
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Aspectos generales", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        torax_2.setText("Falta de respiracion, fatiga");
+        edema.setText("Edema");
 
-        torax_1.setText("Disminusion de masa y fuerza muscular");
+        obesidad.setText("Obesidad");
 
-        urinaria_1.setText("Orina oscura y concentrada");
-
-        esqueleto_3.setText("Piernas arqueadas");
-
-        urinaria_2.setText("Orina clara y diluida");
-
-        esqueleto_2.setText("Dolor en pantorrilla y muslos");
-
-        jLabel11.setText("Vias urinarias");
-
-        esqueleto_1.setText("Dolor de articulaciones");
-
-        jLabel12.setText("Sistema esqueleto-muscular");
-
-        jLabel13.setText("Sistema gastrointestinal");
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(edema)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                .addComponent(obesidad)
+                .addGap(19, 19, 19))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edema)
+                    .addComponent(obesidad))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,242 +588,91 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(edema)
-                                    .addComponent(jLabel3)
-                                    .addComponent(unas_2))
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nervioso_1)
-                                    .addComponent(nervioso_2)
-                                    .addComponent(jLabel10)
-                                    .addComponent(nervioso_3)
-                                    .addComponent(jLabel6)
-                                    .addComponent(boca_1)
-                                    .addComponent(boca_2)
-                                    .addComponent(boca_3)
-                                    .addComponent(boca_5)
-                                    .addComponent(boca_6)
-                                    .addComponent(boca_4)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(209, 209, 209)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(11, 11, 11)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(cuello_1)
-                                            .addComponent(cuello_2))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
-                                        .addComponent(jLabel20))
-                                    .addComponent(obesidad)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(esqueleto_2)
-                                    .addComponent(esqueleto_3)
-                                    .addComponent(esqueleto_1)
-                                    .addComponent(jLabel12))
-                                .addGap(33, 33, 33)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(gastro_1)
-                                    .addComponent(jLabel13))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rostro_1)
-                                    .addComponent(rostro_2)
-                                    .addComponent(rostro_3)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(ojos_1)
-                                    .addComponent(ojos_2)
-                                    .addComponent(ojos_3)
-                                    .addComponent(ojos_5)
-                                    .addComponent(ojos_4))
-                                .addGap(56, 56, 56)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dientes_1)
-                                    .addComponent(dientes_2)
-                                    .addComponent(dientes_3)
-                                    .addComponent(jLabel7)
-                                    .addComponent(piel_6)
-                                    .addComponent(piel_2)
-                                    .addComponent(jLabel2)
-                                    .addComponent(piel_1)
-                                    .addComponent(piel_3)
-                                    .addComponent(piel_4)
-                                    .addComponent(piel_5)
-                                    .addComponent(piel_7))
-                                .addGap(37, 37, 37))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)
-                                .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_cancelar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_siguiente))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(unas_1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(urinaria_1)
-                                    .addComponent(urinaria_2)
-                                    .addComponent(jLabel11))
-                                .addGap(37, 37, 37)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(torax_1)
-                                    .addComponent(torax_2)
-                                    .addComponent(torax_3)
-                                    .addComponent(torax_4))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel1)
+                            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(451, 451, 451))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edema)
-                    .addComponent(obesidad))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nervioso_1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nervioso_2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nervioso_3))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel3)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(unas_1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(unas_2))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(cuello_1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(cuello_2)))
-                                    .addGap(28, 28, 28))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(dientes_1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(dientes_2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(dientes_3))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGap(127, 127, 127)
+                                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(34, 34, 34)
+                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(piel_1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(piel_2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(piel_3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(piel_4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(piel_5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(piel_6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(piel_7)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel4)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(ojos_1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(ojos_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(ojos_3)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(ojos_4)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(ojos_5))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel9)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(torax_1)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(torax_2)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(torax_3)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(torax_4)))
-                                            .addGap(28, 28, 28)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(urinaria_1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(urinaria_2))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(boca_1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(boca_2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(boca_3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(boca_4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(boca_5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(boca_6)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(esqueleto_1)
-                                    .addComponent(gastro_1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(esqueleto_2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(esqueleto_3)
-                                .addGap(17, 17, 17))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(11, 11, 11))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rostro_1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rostro_2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rostro_3)
-                        .addContainerGap())))
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, Short.MAX_VALUE)
+                                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -509,11 +697,11 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_piel_6ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_siguienteActionPerformed
         this.setVisible(false);
         Ingresar_paciente_enviar.edema = (edema.isSelected()) ? 1:0;
         Ingresar_paciente_enviar.obesidad = (obesidad.isSelected()) ? 1:0;
@@ -560,7 +748,7 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
         Ingresar_paciente_enviar.gastro1 = (gastro_1.isSelected()) ? 1:0;
         Ingresar_paciente_5 siguiente = new Ingresar_paciente_5();
         siguiente.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_siguienteActionPerformed
 
     private void gastro_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gastro_1ActionPerformed
         // TODO add your handling code here:
@@ -608,6 +796,8 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
     private javax.swing.JRadioButton boca_4;
     private javax.swing.JRadioButton boca_5;
     private javax.swing.JRadioButton boca_6;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_siguiente;
     private javax.swing.JRadioButton cuello_1;
     private javax.swing.JRadioButton cuello_2;
     private javax.swing.JRadioButton dientes_1;
@@ -618,23 +808,22 @@ public class Ingresar_paciente_4 extends javax.swing.JFrame {
     private javax.swing.JRadioButton esqueleto_2;
     private javax.swing.JRadioButton esqueleto_3;
     private javax.swing.JRadioButton gastro_1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton nervioso_1;
     private javax.swing.JRadioButton nervioso_2;
     private javax.swing.JRadioButton nervioso_3;

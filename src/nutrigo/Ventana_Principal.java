@@ -5,6 +5,7 @@
  */
 package nutrigo;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -13,17 +14,25 @@ import javax.swing.JOptionPane;
  *
  * @author Rene
  */
-public class Pacientes extends javax.swing.JFrame {
+public class Ventana_Principal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Pacientes
+     * Creates new form Ventana_Principal
      */
-    public Pacientes() {
+    public Ventana_Principal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(new java.awt.Color(225, 255, 239));
+        this.setBackground(Color.yellow);
         setIconImage(new ImageIcon(getClass().getResource("../img/recursos/Icono.png")).getImage());
+        
+        Panel_Pacientes panel = new Panel_Pacientes();
+        panel.setSize(1250,600);
+        panel.setLocation(50,5);
+        Panel_Principal.removeAll();
+        Panel_Principal.add(panel,BorderLayout.CENTER);
+        Panel_Principal.revalidate();
+        Panel_Principal.repaint();
     }
 
     /**
@@ -48,13 +57,13 @@ public class Pacientes extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JToolBar.Separator();
         btn_perfil = new javax.swing.JButton();
         btn_cerrar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Panel_Principal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(900, 500));
+        setTitle("Nutri Go");
+        setMinimumSize(new java.awt.Dimension(950, 600));
 
         jPanel1.setBackground(new java.awt.Color(131, 214, 167));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(912, 72));
 
         jToolBar2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -223,51 +232,50 @@ public class Pacientes extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
                 .addComponent(btn_cerrar))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
             .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 102));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/agregar.png"))); // NOI18N
-        jButton1.setText("Agregar nuevo");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout Panel_PrincipalLayout = new javax.swing.GroupLayout(Panel_Principal);
+        Panel_Principal.setLayout(Panel_PrincipalLayout);
+        Panel_PrincipalLayout.setHorizontalGroup(
+            Panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        Panel_PrincipalLayout.setVerticalGroup(
+            Panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 570, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(142, 142, 142))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(Panel_Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(jButton1)
-                .addGap(0, 385, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Panel_Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_inicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicioMouseEntered
-        btn_inicio.setForeground(Color.white);
-        btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Home_2.png")));
+        if (btn_inicio.isEnabled())
+        {
+            btn_inicio.setForeground(Color.white);
+            btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Home_2.png")));
+        }
     }//GEN-LAST:event_btn_inicioMouseEntered
 
     private void btn_inicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicioMouseExited
@@ -276,26 +284,60 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_inicioMouseExited
 
     private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
-        Inicio ventana = new Inicio();
-        ventana.setVisible(true);
-        dispose(); 
+        btn_inicio.setEnabled(false);
+        btn_inicio.setForeground(Color.black);
+        btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Home.png")));
+        btn_pacientes.setEnabled(true);
+        btn_dietas.setEnabled(true);
+        btn_citas.setEnabled(true);
+        btn_perfil.setEnabled(true);
+        
+        Panel_Inicio panel = new Panel_Inicio();
+        panel.setSize(1250,600);
+        panel.setLocation(50,5);
+        Panel_Principal.removeAll();
+        Panel_Principal.add(panel,BorderLayout.CENTER);
+        Panel_Principal.revalidate();
+        Panel_Principal.repaint();
     }//GEN-LAST:event_btn_inicioActionPerformed
 
     private void btn_pacientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pacientesMouseEntered
-        
+        if (btn_pacientes.isEnabled())
+        {
+            btn_pacientes.setForeground(Color.white);
+            btn_pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Pacientes_2.png")));
+        }
     }//GEN-LAST:event_btn_pacientesMouseEntered
 
     private void btn_pacientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pacientesMouseExited
-        
+        btn_pacientes.setForeground(Color.black);
+        btn_pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Pacientes.png")));
     }//GEN-LAST:event_btn_pacientesMouseExited
 
     private void btn_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pacientesActionPerformed
-        // TODO add your handling code here:
+        btn_inicio.setEnabled(true);
+        btn_pacientes.setEnabled(false);
+        btn_pacientes.setForeground(Color.black);
+        btn_pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Pacientes.png")));
+        btn_dietas.setEnabled(true);
+        btn_citas.setEnabled(true);
+        btn_perfil.setEnabled(true);
+        
+        Panel_Pacientes panel = new Panel_Pacientes();
+        panel.setSize(1250,600);
+        panel.setLocation(50,5);
+        Panel_Principal.removeAll();
+        Panel_Principal.add(panel,BorderLayout.CENTER);
+        Panel_Principal.revalidate();
+        Panel_Principal.repaint();
     }//GEN-LAST:event_btn_pacientesActionPerformed
 
     private void btn_dietasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dietasMouseEntered
-        btn_dietas.setForeground(Color.white);
-        btn_dietas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Dietas_2.png")));
+        if (btn_dietas.isEnabled())
+        {
+            btn_dietas.setForeground(Color.white);
+            btn_dietas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Dietas_2.png")));    
+        }
     }//GEN-LAST:event_btn_dietasMouseEntered
 
     private void btn_dietasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dietasMouseExited
@@ -304,12 +346,29 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_dietasMouseExited
 
     private void btn_dietasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dietasActionPerformed
-        // TODO add your handling code here:
+        btn_inicio.setEnabled(true);
+        btn_pacientes.setEnabled(true);
+        btn_dietas.setEnabled(false);
+        btn_dietas.setForeground(Color.black);
+        btn_dietas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Dietas.png")));
+        btn_citas.setEnabled(true);
+        btn_perfil.setEnabled(true);
+        
+        Panel_Dietas panel = new Panel_Dietas();
+        panel.setSize(1250,600);
+        panel.setLocation(50,5);
+        Panel_Principal.removeAll();
+        Panel_Principal.add(panel,BorderLayout.CENTER);
+        Panel_Principal.revalidate();
+        Panel_Principal.repaint();
     }//GEN-LAST:event_btn_dietasActionPerformed
 
     private void btn_citasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_citasMouseEntered
-        btn_citas.setForeground(Color.white);
-        btn_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Citas_2.png")));
+        if (btn_citas.isEnabled())
+        {
+            btn_citas.setForeground(Color.white);
+            btn_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Citas_2.png")));
+        }
     }//GEN-LAST:event_btn_citasMouseEntered
 
     private void btn_citasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_citasMouseExited
@@ -318,12 +377,29 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_citasMouseExited
 
     private void btn_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_citasActionPerformed
-        // TODO add your handling code here:
+        btn_inicio.setEnabled(true);
+        btn_pacientes.setEnabled(true);
+        btn_dietas.setEnabled(true);
+        btn_citas.setEnabled(false);
+        btn_citas.setForeground(Color.black);
+        btn_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Citas.png")));
+        btn_perfil.setEnabled(true);
+        
+        Panel_Citas panel = new Panel_Citas();
+        panel.setSize(1250,600);
+        panel.setLocation(50,5);
+        Panel_Principal.removeAll();
+        Panel_Principal.add(panel,BorderLayout.CENTER);
+        Panel_Principal.revalidate();
+        Panel_Principal.repaint();
     }//GEN-LAST:event_btn_citasActionPerformed
 
     private void btn_perfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseEntered
-        btn_perfil.setForeground(Color.white);
-        btn_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Perfil_2.png")));
+        if (btn_perfil.isEnabled())
+        {
+            btn_perfil.setForeground(Color.white);
+            btn_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Perfil_2.png")));
+        }
     }//GEN-LAST:event_btn_perfilMouseEntered
 
     private void btn_perfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseExited
@@ -332,7 +408,21 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_perfilMouseExited
 
     private void btn_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_perfilActionPerformed
-        // TODO add your handling code here:
+        btn_inicio.setEnabled(true);
+        btn_pacientes.setEnabled(true);
+        btn_dietas.setEnabled(true);
+        btn_citas.setEnabled(true);
+        btn_perfil.setEnabled(false);
+        btn_perfil.setForeground(Color.black);
+        btn_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/menu/Perfil.png")));
+        
+        Panel_Perfil panel = new Panel_Perfil();
+        panel.setSize(1250,600);
+        panel.setLocation(50,5);
+        Panel_Principal.removeAll();
+        Panel_Principal.add(panel,BorderLayout.CENTER);
+        Panel_Principal.revalidate();
+        Panel_Principal.repaint();
     }//GEN-LAST:event_btn_perfilActionPerformed
 
     private void btn_cerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrarMouseEntered
@@ -355,11 +445,6 @@ public class Pacientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_cerrarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Ingresar_paciente_1 ingresar = new Ingresar_paciente_1();
-        ingresar.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -377,32 +462,32 @@ public class Pacientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pacientes().setVisible(true);
+                new Ventana_Principal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panel_Principal;
     private javax.swing.JButton btn_cerrar;
     private javax.swing.JButton btn_citas;
     private javax.swing.JButton btn_dietas;
     private javax.swing.JButton btn_inicio;
     private javax.swing.JButton btn_pacientes;
     private javax.swing.JButton btn_perfil;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;

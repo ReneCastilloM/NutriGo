@@ -37,8 +37,8 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_fin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,16 +68,10 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        hora_1 = new javax.swing.JTextField();
-        hora_2 = new javax.swing.JTextField();
-        hora_3 = new javax.swing.JTextField();
-        hora_4 = new javax.swing.JTextField();
-        hora_5 = new javax.swing.JTextField();
         jScrollPane11 = new javax.swing.JScrollPane();
         ingredientes_6 = new javax.swing.JTextArea();
         jScrollPane12 = new javax.swing.JScrollPane();
         alimento_6 = new javax.swing.JTextArea();
-        hora_6 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         lugar_1 = new javax.swing.JTextField();
@@ -86,8 +80,14 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
         lugar_4 = new javax.swing.JTextField();
         lugar_5 = new javax.swing.JTextField();
         lugar_6 = new javax.swing.JTextField();
+        hora_1 = new javax.swing.JSpinner();
+        hora_2 = new javax.swing.JSpinner();
+        hora_3 = new javax.swing.JSpinner();
+        hora_4 = new javax.swing.JSpinner();
+        hora_5 = new javax.swing.JSpinner();
+        hora_6 = new javax.swing.JSpinner();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ingresar nuevo paciente");
 
         jPanel1.setBackground(new java.awt.Color(175, 228, 202));
@@ -95,17 +95,17 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel20.setText("Recordatorio de 24 horas");
 
-        jButton1.setText("Cancelar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setText("Cancelar");
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Finalizar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_fin.setText("Finalizar");
+        btn_fin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_finActionPerformed(evt);
             }
         });
 
@@ -197,6 +197,18 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
 
         jLabel15.setText("Lugar");
 
+        hora_1.setModel(new javax.swing.SpinnerListModel(new String[] {"0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"}));
+
+        hora_2.setModel(new javax.swing.SpinnerListModel(new String[] {"0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"}));
+
+        hora_3.setModel(new javax.swing.SpinnerListModel(new String[] {"0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"}));
+
+        hora_4.setModel(new javax.swing.SpinnerListModel(new String[] {"0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"}));
+
+        hora_5.setModel(new javax.swing.SpinnerListModel(new String[] {"0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"}));
+
+        hora_6.setModel(new javax.swing.SpinnerListModel(new String[] {"0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"}));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -208,27 +220,28 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton1)
+                                .addComponent(btn_cancelar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2))
+                                .addComponent(btn_fin))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel13)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel14)
+                                            .addComponent(jLabel9))
+                                        .addGap(29, 29, 29)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel10)
-                                                    .addComponent(jLabel13)
-                                                    .addComponent(jLabel12)
-                                                    .addComponent(jLabel11)
-                                                    .addComponent(jLabel14))
-                                                .addGap(29, 29, 29)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(hora_2)
-                                                    .addComponent(hora_3)
-                                                    .addComponent(hora_4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                                    .addComponent(hora_5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(hora_6, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(hora_2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(hora_3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(hora_4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(hora_5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(hora_6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(lugar_2)
@@ -237,8 +250,6 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
                                                     .addComponent(lugar_5)
                                                     .addComponent(lugar_6)))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel9)
-                                                .addGap(29, 29, 29)
                                                 .addComponent(hora_1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(lugar_1)))
@@ -299,19 +310,7 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -321,41 +320,50 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
                             .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
                             .addComponent(hora_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lugar_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addGap(52, 52, 52)
+                            .addComponent(lugar_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(66, 66, 66)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lugar_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hora_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addGap(51, 51, 51)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lugar_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hora_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lugar_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hora_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(hora_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lugar_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))))
+                            .addComponent(jLabel10)
+                            .addComponent(hora_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lugar_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel11)
+                        .addComponent(hora_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lugar_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel12)
+                        .addComponent(hora_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lugar_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13)
+                        .addComponent(hora_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lugar_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(hora_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel14)))
+                        .addComponent(jLabel14)
+                        .addComponent(hora_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_fin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -373,32 +381,32 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Ingresar_paciente_enviar.hora1 = hora_1.getText();
+    private void btn_finActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finActionPerformed
+        Ingresar_paciente_enviar.hora1 =(String) hora_1.getValue() + ":00";
         Ingresar_paciente_enviar.lugar1 = lugar_1.getText();
         Ingresar_paciente_enviar.alimento1 = alimento_1.getText();
         Ingresar_paciente_enviar.ingredientes1 = ingredientes_1.getText();
-        Ingresar_paciente_enviar.hora2 = hora_2.getText();
+        Ingresar_paciente_enviar.hora2 =(String) hora_2.getValue() + ":00";
         Ingresar_paciente_enviar.lugar2 = lugar_2.getText();
         Ingresar_paciente_enviar.alimento2 = alimento_2.getText();
         Ingresar_paciente_enviar.ingredientes2 = ingredientes_2.getText();
-        Ingresar_paciente_enviar.hora3 = hora_3.getText();
+        Ingresar_paciente_enviar.hora3 =(String) hora_3.getValue() + ":00";
         Ingresar_paciente_enviar.lugar3 = lugar_3.getText();
         Ingresar_paciente_enviar.alimento3 = alimento_3.getText();
         Ingresar_paciente_enviar.ingredientes3 = ingredientes_3.getText();
-        Ingresar_paciente_enviar.hora4 = hora_4.getText();
+        Ingresar_paciente_enviar.hora4 =(String) hora_4.getValue() + ":00";
         Ingresar_paciente_enviar.lugar4 = lugar_4.getText();
         Ingresar_paciente_enviar.alimento4 = alimento_4.getText();
         Ingresar_paciente_enviar.ingredientes4 = ingredientes_4.getText();
-        Ingresar_paciente_enviar.hora5 = hora_5.getText();
+        Ingresar_paciente_enviar.hora5 =(String) hora_5.getValue() + ":00";
         Ingresar_paciente_enviar.lugar5 = lugar_5.getText();
         Ingresar_paciente_enviar.alimento5 = alimento_5.getText();
         Ingresar_paciente_enviar.ingredientes5 = ingredientes_5.getText();
-        Ingresar_paciente_enviar.hora6 = hora_6.getText();
+        Ingresar_paciente_enviar.hora6 =(String) hora_6.getValue() + ":00";
         Ingresar_paciente_enviar.lugar6 = lugar_6.getText();
         Ingresar_paciente_enviar.alimento6 = alimento_6.getText();
         Ingresar_paciente_enviar.ingredientes6 = ingredientes_6.getText();
@@ -409,7 +417,7 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Problemas al registrar el paciente\nFavor de intentarlo nuevamente");
         }
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_finActionPerformed
 
     /**
      * @param args the command line arguments
@@ -453,20 +461,20 @@ public class Ingresar_paciente_5 extends javax.swing.JFrame {
     private javax.swing.JTextArea alimento_4;
     private javax.swing.JTextArea alimento_5;
     private javax.swing.JTextArea alimento_6;
-    private javax.swing.JTextField hora_1;
-    private javax.swing.JTextField hora_2;
-    private javax.swing.JTextField hora_3;
-    private javax.swing.JTextField hora_4;
-    private javax.swing.JTextField hora_5;
-    private javax.swing.JTextField hora_6;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_fin;
+    private javax.swing.JSpinner hora_1;
+    private javax.swing.JSpinner hora_2;
+    private javax.swing.JSpinner hora_3;
+    private javax.swing.JSpinner hora_4;
+    private javax.swing.JSpinner hora_5;
+    private javax.swing.JSpinner hora_6;
     private javax.swing.JTextArea ingredientes_1;
     private javax.swing.JTextArea ingredientes_2;
     private javax.swing.JTextArea ingredientes_3;
     private javax.swing.JTextArea ingredientes_4;
     private javax.swing.JTextArea ingredientes_5;
     private javax.swing.JTextArea ingredientes_6;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

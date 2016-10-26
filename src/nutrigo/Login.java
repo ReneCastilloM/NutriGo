@@ -169,11 +169,18 @@ public class Login extends javax.swing.JFrame {
                     this.setVisible(false);
                     if (sexo.equals("M"))
                     {
+                        this.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Bienvenido " + nom);
+                        Ventana_Principal ven = new Ventana_Principal();
+                        ven.setVisible(true);
                     }
                     else
                     {
+                        this.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Bienvenida " + nom);
+                        Ventana_Principal ven = new Ventana_Principal();
+                        ven.setVisible(true);
+                        
                     }
                 }
                 else
