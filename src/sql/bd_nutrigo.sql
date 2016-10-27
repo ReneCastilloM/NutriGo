@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2016 a las 07:36:47
+-- Tiempo de generación: 27-10-2016 a las 22:14:59
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_nutrigo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas`
+--
+
+CREATE TABLE `notas` (
+  `id` int(3) NOT NULL,
+  `titulo` varchar(70) NOT NULL,
+  `texto` varchar(500) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `R` int(3) NOT NULL,
+  `G` int(3) NOT NULL,
+  `B` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -53,14 +69,12 @@ INSERT INTO `pacientes` (`id`, `nombre`, `edad`, `sexo`, `telefono`, `correo`, `
 (1, 'Rene Castillo', 0, 'Masculino', 1112, 'rene@', 221, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
 (2, 'Jose Perez', 0, 'Masculino', 2221, 'rene@', 1112, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
 (3, 'Luis Alvarez', 0, 'Masculino', 22210021, 'luis@hotmail.com', 2020202, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
-(4, 'Cesar Eddie', 0, 'Masculino', 101010, 'cesar@hotmail.com', 1110101010, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
 (5, 'Martha Sanchez', 0, 'Masculino', 11112, 'martha@hotmail.com', 22222221, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
 (6, 'Andrea Lopez Cisneros', 30, 'Femenino', 83556100, 'andrea@hotmail.com', 8115203366, 'Posgrado', 'Diabetes', 'Antecedente 1', 'Ninguno', 'Paracetamol', 'Ninguna', 'Fistulas', 'Ninguno', 1),
 (7, 'Lucia Venezuela', 68, 'Femenino', 1234568777, 'lucia@hotm', 1155478547774, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
 (8, 'Luis Jaime Ortiz', 34, 'Masculino', 1102236554, 'lj@hotmail.com', 222012365554, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0),
 (9, 'Martha Castillo Mireles', 17, 'Femenino', 83825719, 'martha1@hotmail.com', 811269325, 'Bachiller', 'Hipertension', 'Hipertension', 'Alcoholismo', 'paracetamol', '', 'Ileostoias', 'Extreñimiento', 1),
-(10, 'Mayra Alejandra Villareal Salazar', 29, 'Femenino', 83133182, 'mayra_latermita@hotamial.com', 8116300282, 'Licenciatura', 'Hipertension', 'Ninguno', 'Ninguno', 'aspirina junior, acido folico', 'Ninguna', 'Ninguno', 'Extreñimiento', 1),
-(11, 'Rene Castillo', 0, 'Masculino', 221, 'rnee@', 112, 'Primaria', 'Ninguno', 'Ninguno', 'Ninguno', 'Ninguna', 'Ninguna', 'Ninguno', 'Ninguno', 0);
+(10, 'Mayra Alejandra Villareal Salazar', 29, 'Femenino', 83133182, 'mayra_latermita@hotamial.com', 8116300282, 'Licenciatura', 'Hipertension', 'Ninguno', 'Ninguno', 'aspirina junior, acido folico', 'Ninguna', 'Ninguno', 'Extreñimiento', 1);
 
 -- --------------------------------------------------------
 
@@ -123,14 +137,12 @@ INSERT INTO `pacientes_clinico` (`id`, `edema`, `obesidad`, `unas_1`, `unas_2`, 
 (1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (6, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0),
-(10, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(10, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -174,7 +186,6 @@ INSERT INTO `pacientes_evaluacion` (`id`, `hora_1`, `lugar_1`, `alimento_1`, `in
 (1, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
 (2, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
 (3, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
-(4, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
 (5, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
 (6, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
 (7, '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', '', '0:00:00', '', '', ''),
@@ -223,14 +234,12 @@ INSERT INTO `pacientes_info` (`id`, `peso`, `estatura`, `c_cintura`, `c_cadera`,
 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
 (5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4),
 (6, 90, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
 (7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (9, 82, 162, 23, 100, 100, 26, 12, 12, 12, 22, 25, 12, 12, 20, 100, 22, 22, 1.2, 150, 15, 22, 33, 22),
-(10, 56, 155, 70, 100, 100, 17, 10, 10, 10, 10, 10, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12),
-(11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
+(10, 56, 155, 70, 100, 100, 17, 10, 10, 10, 10, 10, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12);
 
 -- --------------------------------------------------------
 
@@ -286,6 +295,12 @@ INSERT INTO `usuarios` (`usuario`, `nombre`, `correo`, `pass`, `sexo`) VALUES
 --
 
 --
+-- Indices de la tabla `notas`
+--
+ALTER TABLE `notas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
@@ -325,6 +340,11 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
+--
+-- AUTO_INCREMENT de la tabla `notas`
+--
+ALTER TABLE `notas`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
