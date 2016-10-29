@@ -163,7 +163,9 @@ public class Panel_Pacientes extends javax.swing.JPanel {
             if (x==0)
             {
                 try {
-                    int registro = Tabla.getSelectedRow() + 1;
+                    int row = Tabla.getSelectedRow();
+                    String reg = (String) Tabla.getValueAt(row, 0);
+                    int registro = Integer.parseInt(reg);
                     Conectar con = new Conectar();
                     Connection co = con.conexion();
                     Statement stm = co.createStatement();
@@ -178,8 +180,8 @@ public class Panel_Pacientes extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(null, "Registro eliminado con exito");
                     
                     //A PARTIR DE AQUI
-                    DefaultTableModel modelo=(DefaultTableModel) Panel_Pacientes.Tabla.getModel();
-                    int filas=Panel_Pacientes.Tabla.getRowCount();
+                    DefaultTableModel modelo=(DefaultTableModel) Tabla.getModel();
+                    int filas = Tabla.getRowCount();
                     for (int i = 0;filas>i; i++)
                     {
                         modelo.removeRow(0);
