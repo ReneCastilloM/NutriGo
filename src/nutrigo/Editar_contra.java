@@ -69,7 +69,7 @@ public class Editar_contra extends javax.swing.JFrame {
             }
         });
 
-        btn_siguiente.setText("Siguiente");
+        btn_siguiente.setText("Aceptar");
         btn_siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_siguienteActionPerformed(evt);

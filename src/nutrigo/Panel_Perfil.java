@@ -24,6 +24,8 @@ public class Panel_Perfil extends javax.swing.JPanel {
      */
     public Panel_Perfil() {
         initComponents();
+        String contador_pacientes = String.valueOf(Panel_Pacientes.Tabla.getRowCount());
+        num_pacientes.setText(contador_pacientes);
         Tabla.setDefaultRenderer(Object.class, new Colores_tabla());
         try {
             DefaultTableModel modelo = (DefaultTableModel) Tabla.getModel();
@@ -81,8 +83,8 @@ public class Panel_Perfil extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        num_pacientes = new javax.swing.JLabel();
+        num_dietas = new javax.swing.JLabel();
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,6 +116,11 @@ public class Panel_Perfil extends javax.swing.JPanel {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
         jButton2.setText("Editar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 51, 51));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,6 +167,11 @@ public class Panel_Perfil extends javax.swing.JPanel {
         jButton5.setBackground(new java.awt.Color(255, 255, 153));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
         jButton5.setText("Editar info. personal");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(255, 255, 153));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar_contra.png"))); // NOI18N
@@ -176,9 +188,9 @@ public class Panel_Perfil extends javax.swing.JPanel {
 
         jLabel11.setText("83825719");
 
-        jLabel12.setText("55");
+        num_pacientes.setText("0");
 
-        jLabel13.setText("50");
+        num_dietas.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -187,8 +199,12 @@ public class Panel_Perfil extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(num_pacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -202,11 +218,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
                             .addComponent(jLabel9)
                             .addComponent(jLabel10)
                             .addComponent(jLabel11)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel3)))
+                            .addComponent(num_dietas))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -263,11 +275,11 @@ public class Panel_Perfil extends javax.swing.JPanel {
                         .addGap(38, 38, 38)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12)
+                        .addComponent(num_pacientes)
                         .addGap(38, 38, 38)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
+                        .addComponent(num_dietas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton5)
@@ -347,6 +359,23 @@ public class Panel_Perfil extends javax.swing.JPanel {
         ver.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int row = Panel_Perfil.Tabla.getSelectedRow();
+        if (row == -1)
+        {
+            JOptionPane.showMessageDialog(null, "Para editar el contenido de una nota debes seleccionar su respectiva fila de la tabla");
+            return;
+        }
+        
+        Editar_nota editar = new Editar_nota();
+        editar.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Editar_info_personal editar = new Editar_info_personal();
+        editar.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTable Tabla;
@@ -359,8 +388,6 @@ public class Panel_Perfil extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -371,5 +398,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel num_dietas;
+    private javax.swing.JLabel num_pacientes;
     // End of variables declaration//GEN-END:variables
 }

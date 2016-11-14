@@ -7,7 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Nueva nota"/>
+    <Property name="title" type="java.lang.String" value="Editar nota"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -29,10 +29,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -81,11 +81,11 @@
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="boton_verde" min="-2" max="-2" attributes="0"/>
-                  <Component id="boton_amarillo" min="-2" max="-2" attributes="0"/>
-                  <Component id="boton_rojo" min="-2" max="-2" attributes="0"/>
-                  <Component id="boton_azul" min="-2" max="-2" attributes="0"/>
-                  <Component id="boton_blanco" min="-2" max="-2" attributes="0"/>
+                  <Component id="boton_verde" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="boton_amarillo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="boton_rojo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="boton_azul" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="boton_blanco" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="24" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -104,6 +104,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="titulo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tituloActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -195,7 +198,7 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/botones/Blanco_S.png"/>
+          <Image iconType="3" name="/img/botones/Blanco.png"/>
         </Property>
       </Properties>
       <Events>
