@@ -26,6 +26,8 @@ public class Panel_Perfil extends javax.swing.JPanel {
         initComponents();
         String contador_pacientes = String.valueOf(Panel_Pacientes.Tabla.getRowCount());
         num_pacientes.setText(contador_pacientes);
+        String contador_dietas = String.valueOf(Panel_Dietas.Tabla.getRowCount());
+        num_dietas.setText(contador_dietas);
         Tabla.setDefaultRenderer(Object.class, new Colores_tabla());
         try {
             DefaultTableModel modelo = (DefaultTableModel) Tabla.getModel();
@@ -108,6 +110,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/info.png"))); // NOI18N
         jButton1.setText("Ver contenido");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -116,6 +119,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
         jButton2.setText("Editar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -126,6 +130,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/eliminar.png"))); // NOI18N
         jButton3.setText("Eliminar");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -135,6 +140,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
         jButton4.setBackground(new java.awt.Color(102, 255, 102));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/agregar.png"))); // NOI18N
         jButton4.setText("Agregar nueva");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -167,6 +173,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
         jButton5.setBackground(new java.awt.Color(255, 255, 153));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
         jButton5.setText("Editar info. personal");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -176,6 +183,7 @@ public class Panel_Perfil extends javax.swing.JPanel {
         jButton6.setBackground(new java.awt.Color(255, 255, 153));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar_contra.png"))); // NOI18N
         jButton6.setText("Editar contraseña");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);

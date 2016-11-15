@@ -5,6 +5,15 @@
  */
 package nutrigo;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Rene
@@ -16,6 +25,83 @@ public class Panel_Dietas extends javax.swing.JPanel {
      */
     public Panel_Dietas() {
         initComponents();
+        try {
+            DefaultTableModel modelo = (DefaultTableModel) Tabla.getModel();
+            Tabla.getColumnModel().getColumn(0).setPreferredWidth(125);
+            Tabla.getColumnModel().getColumn(1).setPreferredWidth(125);
+            Tabla.getColumnModel().getColumn(2).setPreferredWidth(275);
+            Tabla.getColumnModel().getColumn(3).setPreferredWidth(150);
+            Tabla.getColumnModel().getColumn(4).setPreferredWidth(325);
+            
+            Conectar con = new Conectar();
+            Connection co = con.conexion();
+            String sql_1000 = "SELECT id,titulo,fecha,notas FROM dietas_1000";
+            String sql_1200 = "SELECT id,titulo,fecha,notas FROM dietas_1200";
+            String sql_1400 = "SELECT id,titulo,fecha,notas FROM dietas_1400";
+            String sql_1600 = "SELECT id,titulo,fecha,notas FROM dietas_1600";
+            String sql_1800 = "SELECT id,titulo,fecha,notas FROM dietas_1800";
+            String []datos_1000 = new String [5];
+            Statement st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql_1000);
+            while(rs.next()){
+                datos_1000[0]= "1000";
+                datos_1000[1] =rs.getString("id");
+                datos_1000[2]=rs.getString("titulo");
+                datos_1000[3]=rs.getString("fecha");
+                datos_1000[4]=rs.getString("notas");
+                modelo.addRow(datos_1000);
+            }
+            
+            String []datos_1200 = new String [5];
+            st = co.createStatement();
+            rs = st.executeQuery(sql_1200);
+            while(rs.next()){
+                datos_1200[0]= "1200";
+                datos_1200[1] =rs.getString("id");
+                datos_1200[2]=rs.getString("titulo");
+                datos_1200[3]=rs.getString("fecha");
+                datos_1200[4]=rs.getString("notas");
+                modelo.addRow(datos_1200);
+            }
+            
+            String []datos_1400 = new String [5];
+            st = co.createStatement();
+            rs = st.executeQuery(sql_1400);
+            while(rs.next()){
+                datos_1400[0]= "1400";
+                datos_1400[1] =rs.getString("id");
+                datos_1400[2]=rs.getString("titulo");
+                datos_1400[3]=rs.getString("fecha");
+                datos_1400[4]=rs.getString("notas");
+                modelo.addRow(datos_1400);
+            }
+            
+            String []datos_1600 = new String [5];
+            st = co.createStatement();
+            rs = st.executeQuery(sql_1600);
+            while(rs.next()){
+                datos_1600[0]= "1600";
+                datos_1600[1] =rs.getString("id");
+                datos_1600[2]=rs.getString("titulo");
+                datos_1600[3]=rs.getString("fecha");
+                datos_1600[4]=rs.getString("notas");
+                modelo.addRow(datos_1600);
+            }
+            
+            String []datos_1800 = new String [5];
+            st = co.createStatement();
+            rs = st.executeQuery(sql_1800);
+            while(rs.next()){
+                datos_1800[0]= "1800";
+                datos_1800[1] =rs.getString("id");
+                datos_1800[2]=rs.getString("titulo");
+                datos_1800[3]=rs.getString("fecha");
+                datos_1800[4]=rs.getString("notas");
+                modelo.addRow(datos_1800);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al tratar de llenar la tabla, por favor vuelve a intentarlo");
+        }
     }
 
     /**
@@ -27,19 +113,219 @@ public class Panel_Dietas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabla = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
+        Tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Calorias por dia", "Folio por calorias", "Titulo", "Fecha de modificacion", "Anotaciones"
+            }
+        ));
+        jScrollPane1.setViewportView(Tabla);
+
+        jButton3.setBackground(new java.awt.Color(255, 51, 51));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/eliminar.png"))); // NOI18N
+        jButton3.setText("Eliminar");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(102, 255, 102));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/agregar.png"))); // NOI18N
+        jButton4.setText("Agregar Nuevo");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
+        jButton2.setText("Editar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButton2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jButton2))
+                .addGap(40, 40, 40))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int fila = Tabla.getSelectedRow();
+        if (fila != -1)
+        {
+            String nombre = String.valueOf(Tabla.getValueAt(fila, 1));
+            int x = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar esta dieta?", "Eliminar paciente", JOptionPane.YES_NO_OPTION);
+            if (x==0)
+            {
+                try {
+                    int row = Tabla.getSelectedRow();
+                    String reg = (String) Tabla.getValueAt(row, 1);
+                    int registro = Integer.parseInt(reg);
+                    String cal = (String) Tabla.getValueAt(row, 0);
+                    int calorias = Integer.parseInt(cal);
+                    Conectar con = new Conectar();
+                    Connection co = con.conexion();
+                    Statement stm = co.createStatement();
+                    String eliminar="";
+                    if(calorias == 1000){
+                        eliminar = "DELETE FROM dietas_1000 WHERE id=" + registro;
+                    }
+                    else if(calorias==1200){
+                        eliminar = "DELETE FROM dietas_1200 WHERE id=" + registro;
+                    }
+                    else if(calorias==1400){
+                        eliminar = "DELETE FROM dietas_1400 WHERE id=" + registro;
+                    }
+                    else if(calorias==1600){
+                        eliminar = "DELETE FROM dietas_1600 WHERE id=" + registro;
+                    }
+                    else{
+                        eliminar = "DELETE FROM dietas_1800 WHERE id=" + registro;
+                    }
+                    
+                    stm.executeUpdate(eliminar);
+                    JOptionPane.showMessageDialog(null, "Registro eliminado con exito");
+
+                    //A PARTIR DE AQUI
+                    DefaultTableModel modelo=(DefaultTableModel) Tabla.getModel();
+                    int filas = Tabla.getRowCount();
+                    for (int i = 0;filas>i; i++)
+                    {
+                        modelo.removeRow(0);
+                    }
+                    
+                    String sql_1000 = "SELECT id,titulo,fecha,notas FROM dietas_1000";
+                    String sql_1200 = "SELECT id,titulo,fecha,notas FROM dietas_1200";
+                    String sql_1400 = "SELECT id,titulo,fecha,notas FROM dietas_1400";
+                    String sql_1600 = "SELECT id,titulo,fecha,notas FROM dietas_1600";
+                    String sql_1800 = "SELECT id,titulo,fecha,notas FROM dietas_1800";
+                    String []datos_1000 = new String [5];
+                    Statement st = co.createStatement();
+                    ResultSet rs = st.executeQuery(sql_1000);
+                    while(rs.next()){
+                        datos_1000[0]= "1000";
+                        datos_1000[1] =rs.getString("id");
+                        datos_1000[2]=rs.getString("titulo");
+                        datos_1000[3]=rs.getString("fecha");
+                        datos_1000[4]=rs.getString("notas");
+                        modelo.addRow(datos_1000);
+                    }
+
+                    String []datos_1200 = new String [5];
+                    st = co.createStatement();
+                    rs = st.executeQuery(sql_1200);
+                    while(rs.next()){
+                        datos_1200[0]= "1200";
+                        datos_1200[1] =rs.getString("id");
+                        datos_1200[2]=rs.getString("titulo");
+                        datos_1200[3]=rs.getString("fecha");
+                        datos_1200[4]=rs.getString("notas");
+                        modelo.addRow(datos_1200);
+                    }
+
+                    String []datos_1400 = new String [5];
+                    st = co.createStatement();
+                    rs = st.executeQuery(sql_1400);
+                    while(rs.next()){
+                        datos_1400[0]= "1400";
+                        datos_1400[1] =rs.getString("id");
+                        datos_1400[2]=rs.getString("titulo");
+                        datos_1400[3]=rs.getString("fecha");
+                        datos_1400[4]=rs.getString("notas");
+                        modelo.addRow(datos_1400);
+                    }
+
+                    String []datos_1600 = new String [5];
+                    st = co.createStatement();
+                    rs = st.executeQuery(sql_1600);
+                    while(rs.next()){
+                        datos_1600[0]= "1600";
+                        datos_1600[1] =rs.getString("id");
+                        datos_1600[2]=rs.getString("titulo");
+                        datos_1600[3]=rs.getString("fecha");
+                        datos_1600[4]=rs.getString("notas");
+                        modelo.addRow(datos_1600);
+                    }
+
+                    String []datos_1800 = new String [5];
+                    st = co.createStatement();
+                    rs = st.executeQuery(sql_1800);
+                    while(rs.next()){
+                        datos_1800[0]= "1800";
+                        datos_1800[1] =rs.getString("id");
+                        datos_1800[2]=rs.getString("titulo");
+                        datos_1800[3]=rs.getString("fecha");
+                        datos_1800[4]=rs.getString("notas");
+                        modelo.addRow(datos_1800);
+                    }
+
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error al eliminar el registro, intentelo nuevamente");
+                }
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Para eliminar un registro, debes seleccionar su respectiva fila de la tabla");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Ingresar_dieta_1 ven = new Ingresar_dieta_1();
+        ven.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JOptionPane.showMessageDialog(null, "Esta en proceso");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTable Tabla;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

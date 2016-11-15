@@ -26,7 +26,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         this.setBackground(Color.yellow);
         setIconImage(new ImageIcon(getClass().getResource("../img/recursos/Icono.png")).getImage());
         
-        Panel_Pacientes panel = new Panel_Pacientes();
+        Panel_Inicio panel = new Panel_Inicio();
         panel.setSize(1250,600);
         panel.setLocation(50,5);
         Panel_Principal.removeAll();
@@ -77,6 +77,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         btn_inicio.setBorderPainted(false);
         btn_inicio.setContentAreaFilled(false);
         btn_inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_inicio.setEnabled(false);
         btn_inicio.setFocusable(false);
         btn_inicio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_inicio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -104,7 +105,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
         btn_pacientes.setBorderPainted(false);
         btn_pacientes.setContentAreaFilled(false);
         btn_pacientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_pacientes.setEnabled(false);
         btn_pacientes.setFocusable(false);
         btn_pacientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_pacientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);

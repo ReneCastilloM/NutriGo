@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
@@ -19,12 +20,18 @@ import javax.swing.JRadioButton;
  * @author Rene
  */
 public class Editar_paciente extends javax.swing.JFrame {
-
+    int row = Panel_Pacientes.Tabla.getSelectedRow();
+    String reg = (String) Panel_Pacientes.Tabla.getValueAt(row, 0);
+    int registro = Integer.parseInt(reg);
     /**
      * Creates new form Editar_paciente
      */
     public Editar_paciente() {
         initComponents();
+        this.getContentPane().setBackground(new java.awt.Color(175, 228, 202));
+        this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../img//recursos/Icono.png")).getImage());
+        
         
         Conectar con = new Conectar();
         Connection co = con.conexion();
@@ -33,7 +40,7 @@ public class Editar_paciente extends javax.swing.JFrame {
         String nombre="",edad="",telefono="",correo="",celular="",escolaridad="",a_heredo="",a_no_pat="",a_pat="";
         String alergias_a="",alergias_m="",quirurgicos="",trastornos="",suplementos="";
         String sql_personal = "SELECT nombre,edad,telefono,correo,celular,a_heredo,a_no_pat,a_pat,alergias_a,"
-                + "alergias_m,quirurgicos,trastornos,suplementos FROM pacientes WHERE id=1";
+                + "alergias_m,quirurgicos,trastornos,suplementos FROM pacientes WHERE id=" + registro;
         try{
             Statement st = co.createStatement();
             ResultSet rs = st.executeQuery(sql_personal);
@@ -67,7 +74,7 @@ public class Editar_paciente extends javax.swing.JFrame {
         String peso="", estatura="", c_cintura="", c_cadera="", c_muneca="", c_brazo="", biceps="", triceps="";
         String glucosa="", a_urico="", trigliceridos="", colesterol="";
         String sql_antro = "SELECT peso, estatura, c_cintura, c_cadera, c_muneca, c_brazo, biceps, triceps, glucosa,"
-                + "a_urico, trigliceridos, colesterol FROM pacientes_info WHERE id=1";
+                + "a_urico, trigliceridos, colesterol FROM pacientes_info WHERE id=" + registro;
         try{
             Statement st = co.createStatement();
             ResultSet rs = st.executeQuery(sql_antro);
@@ -110,7 +117,7 @@ public class Editar_paciente extends javax.swing.JFrame {
         String hora5="", alimento5="", ingredientes5="";
         String sql_recordatorio = "SELECT hora_1, alimento_1, ingredientes_1,hora_2, alimento_2, ingredientes_2,hora_3,"
                 + "alimento_3, ingredientes_3,hora_4, alimento_4, ingredientes_4,hora_5, alimento_5, ingredientes_5"
-                + " FROM pacientes_evaluacion WHERE id=1";
+                + " FROM pacientes_evaluacion WHERE id=" + registro;
         try{
             Statement st = co.createStatement();
             ResultSet rs = st.executeQuery(sql_recordatorio);
@@ -200,7 +207,7 @@ public class Editar_paciente extends javax.swing.JFrame {
         String sql_clinico = "SELECT edema, obesidad, unas_1, unas_2, cuello_1, cuello_2, nervioso_1, nervioso_2, nervioso_3,"
                 + "rostro_1, rostro_2, rostro_3, dientes_1, dientes_2, dientes_3, urinaria_1, urinaria_2, torax_1, torax_2,"
                 + "torax_3, torax_4, boca_1, boca_2, boca_3, boca_4, boca_5, boca_6, ojos_1, ojos_2, ojos_3, ojos_4, ojos_5,"
-                + "piel_1, piel_2, piel_3, piel_4, piel_5, piel_6, piel_7, esqueleto_1, esqueleto_2, esqueleto_3 FROM pacientes_clinico WHERE id=1";
+                + "piel_1, piel_2, piel_3, piel_4, piel_5, piel_6, piel_7, esqueleto_1, esqueleto_2, esqueleto_3 FROM pacientes_clinico WHERE id=" + registro;
         int i = 1;
         try{
             Statement st = co.createStatement();
@@ -341,6 +348,20 @@ public class Editar_paciente extends javax.swing.JFrame {
         a_urico_txt = new javax.swing.JTextField();
         trigliceridos_txt = new javax.swing.JTextField();
         colesterol_txt = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -378,6 +399,9 @@ public class Editar_paciente extends javax.swing.JFrame {
         btn_actualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar paciente");
+
+        jPanel1.setBackground(new java.awt.Color(175, 228, 202));
 
         jLabel1.setText("Nombre:");
 
@@ -526,6 +550,8 @@ public class Editar_paciente extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Personal", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(175, 228, 202));
 
         jPanel8.setBackground(new java.awt.Color(175, 228, 202));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cuello", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
@@ -1023,6 +1049,8 @@ public class Editar_paciente extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Clinico", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(175, 228, 202));
+
         jLabel14.setText("Circunferencia de muñeca:");
 
         jLabel15.setText("Circunferencia de brazo:");
@@ -1047,12 +1075,42 @@ public class Editar_paciente extends javax.swing.JFrame {
 
         jLabel25.setText("Colesterol:");
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setText("Datos antropometricos");
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setText("Datos bioquimicos");
+
+        jLabel28.setText("gr/dl");
+
+        jLabel29.setText("gr/dl");
+
+        jLabel30.setText("gr/dl");
+
+        jLabel39.setText("gr/dl");
+
+        jLabel40.setText("mm");
+
+        jLabel41.setText("cm");
+
+        jLabel42.setText("cm");
+
+        jLabel43.setText("m");
+
+        jLabel44.setText("mm");
+
+        jLabel45.setText("cm");
+
+        jLabel46.setText("cm");
+
+        jLabel47.setText("m");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
+                .addContainerGap(136, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1076,23 +1134,34 @@ public class Editar_paciente extends javax.swing.JFrame {
                     .addComponent(glucosa_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel29)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel25))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(0, 258, Short.MAX_VALUE)
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel24)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(trigliceridos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(colesterol_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel43))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel12))
                             .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1100,51 +1169,90 @@ public class Editar_paciente extends javax.swing.JFrame {
                             .addComponent(c_muneca_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(c_brazo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(triceps_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(139, 139, 139))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel45))
+                .addGap(107, 107, 107))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addGap(378, 378, 378))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addGap(374, 374, 374))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addComponent(estatura_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peso_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel14)
-                    .addComponent(c_cintura_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(c_muneca_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel15)
-                    .addComponent(c_cadera_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(c_brazo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel12)
+                            .addComponent(estatura_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peso_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel47))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel14)
+                            .addComponent(c_cintura_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(c_muneca_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel46))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel15)
+                            .addComponent(c_cadera_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(c_brazo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel45)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel41)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jLabel18)
                     .addComponent(biceps_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(triceps_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                    .addComponent(triceps_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jLabel27)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jLabel24)
                     .addComponent(glucosa_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(trigliceridos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(trigliceridos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel28))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(jLabel25)
                     .addComponent(a_urico_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(colesterol_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(colesterol_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel29))
                 .addGap(42, 42, 42))
         );
 
         jTabbedPane1.addTab("Antropometrico y bioquimico", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(175, 228, 202));
 
         jLabel31.setText("Desayuno");
 
@@ -1227,32 +1335,13 @@ public class Editar_paciente extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel38)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(hora_5, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel37)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel37))
+                .addGap(391, 391, 391)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane7)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                    .addComponent(jScrollPane12))
+                    .addComponent(jScrollPane5))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
@@ -1260,16 +1349,29 @@ public class Editar_paciente extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel36))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(hora_1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hora_1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3))
-                    .addComponent(hora_3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hora_2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hora_4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(hora_3, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(hora_2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(hora_4, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(hora_5))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane12)
+                            .addComponent(jScrollPane9))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1328,6 +1430,7 @@ public class Editar_paciente extends javax.swing.JFrame {
         jTabbedPane1.addTab("Recordatorio de 24 hrs.", jPanel4);
 
         btn_actualizar.setText("Actualizar valores");
+        btn_actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_actualizarActionPerformed(evt);
@@ -1472,10 +1575,10 @@ public class Editar_paciente extends javax.swing.JFrame {
         
         //ACTUALIZACION
         Conectar con = new Conectar();
-        String sql_clinico = "UPDATE pacientes_clinico SET edema=" + edem + ",obesidad=" + obesida + ",unas_1=" + unas1 + ",unas_2=" + unas2 + ",cuello_1=" + cuello1 + ",cuello_2=" + cuello2 + ",nervioso_1=" + nervioso1 + ",nervioso_2=" + nervioso2 + ",nervioso_3=" + nervioso3 + ",rostro_1=" + rostro1 + ",rostro_2=" + rostro2 + ",rostro_3=" + rostro3 + ",dientes_1=" + dientes1 + ",dientes_2=" + dientes2 + ",dientes_3=" + dientes3 + ",urinaria_1=" + urinaria1 + ",urinaria_2=" + urinaria2 + ",torax_1=" + torax1 + ",torax_2=" + torax2 + ",torax_3=" + torax3 + ",torax_4=" + torax4 + ",boca_1=" + boca1 + ",boca_2=" + boca2 + ",boca_3=" + boca3 + ",boca_4=" + boca4 + ",boca_5=" + boca5 + ",boca_6=" + boca6 + ",ojos_1=" + ojos1 + ",ojos_2=" + ojos2 + ",ojos_3=" + ojos3 + ",ojos_4=" + ojos4 + ",ojos_5=" + ojos5 + ",piel_1=" + piel1 + ",piel_2=" + piel2 + ",piel_3=" + piel3 + ",piel_4=" + piel4 + ",piel_5=" + piel5 + ",piel_6=" + piel6 + ",piel_7=" + piel7 + ",esqueleto_1=" + esqueleto1 + ",esqueleto_2=" + esqueleto2 + ",esqueleto_3=" + esqueleto3 + " WHERE id='1'";
-        String sql_recordatorio = "UPDATE pacientes_evaluacion SET hora_1='" + hora1 + "',alimento_1='" + alimento1 + "',ingredientes_1='" + ingredientes1 +  "',hora_2='" + hora2 + "',alimento_2='" + alimento2 + "',ingredientes_2='" + ingredientes2 + "',hora_3='" + hora3 + "',alimento_3='" + alimento3 + "',ingredientes_3='" + ingredientes3 + "',hora_4='" + hora4 + "',alimento_4='" + alimento4 + "',ingredientes_4='" + ingredientes4 + "',hora_5='" + hora5 + "',alimento_5='" + alimento5 + "',ingredientes_5='" + ingredientes5 + "' WHERE id='1'";
-        String sql_personal = "UPDATE pacientes SET nombre='" + nombre + "',edad=" + edad + ",telefono=" + telefono + ",correo='" + correo + "',celular=" + celular + ",a_heredo='" + a_h + "',a_no_pat='" + a_npat + "',a_pat='" + a_pat + "',alergias_a='" + alergia_a + "',alergias_m='"  + alergia_m + "',quirurgicos='" + quirur + "',trastornos='" + trastornos + "',suplementos='" + suplemento + "' WHERE id='1'";
-        String sql_antro = "UPDATE pacientes_info SET peso=" + peso + ",estatura=" + estatura + ",c_cintura=" + c_cintura + ",c_cadera=" + c_cadera + ",c_muneca=" + c_muneca + ",c_brazo=" + c_brazo + ",biceps=" + biceps + ",triceps=" + triceps + ",glucosa=" + glucosa + ",a_urico=" + a_urico + ",trigliceridos=" + trigliceridos + ",colesterol=" + colesterol + " WHERE id='1'";
+        String sql_clinico = "UPDATE pacientes_clinico SET edema=" + edem + ",obesidad=" + obesida + ",unas_1=" + unas1 + ",unas_2=" + unas2 + ",cuello_1=" + cuello1 + ",cuello_2=" + cuello2 + ",nervioso_1=" + nervioso1 + ",nervioso_2=" + nervioso2 + ",nervioso_3=" + nervioso3 + ",rostro_1=" + rostro1 + ",rostro_2=" + rostro2 + ",rostro_3=" + rostro3 + ",dientes_1=" + dientes1 + ",dientes_2=" + dientes2 + ",dientes_3=" + dientes3 + ",urinaria_1=" + urinaria1 + ",urinaria_2=" + urinaria2 + ",torax_1=" + torax1 + ",torax_2=" + torax2 + ",torax_3=" + torax3 + ",torax_4=" + torax4 + ",boca_1=" + boca1 + ",boca_2=" + boca2 + ",boca_3=" + boca3 + ",boca_4=" + boca4 + ",boca_5=" + boca5 + ",boca_6=" + boca6 + ",ojos_1=" + ojos1 + ",ojos_2=" + ojos2 + ",ojos_3=" + ojos3 + ",ojos_4=" + ojos4 + ",ojos_5=" + ojos5 + ",piel_1=" + piel1 + ",piel_2=" + piel2 + ",piel_3=" + piel3 + ",piel_4=" + piel4 + ",piel_5=" + piel5 + ",piel_6=" + piel6 + ",piel_7=" + piel7 + ",esqueleto_1=" + esqueleto1 + ",esqueleto_2=" + esqueleto2 + ",esqueleto_3=" + esqueleto3 + " WHERE id=" + registro;
+        String sql_recordatorio = "UPDATE pacientes_evaluacion SET hora_1='" + hora1 + "',alimento_1='" + alimento1 + "',ingredientes_1='" + ingredientes1 +  "',hora_2='" + hora2 + "',alimento_2='" + alimento2 + "',ingredientes_2='" + ingredientes2 + "',hora_3='" + hora3 + "',alimento_3='" + alimento3 + "',ingredientes_3='" + ingredientes3 + "',hora_4='" + hora4 + "',alimento_4='" + alimento4 + "',ingredientes_4='" + ingredientes4 + "',hora_5='" + hora5 + "',alimento_5='" + alimento5 + "',ingredientes_5='" + ingredientes5 + "' WHERE id=" + registro;
+        String sql_personal = "UPDATE pacientes SET nombre='" + nombre + "',edad=" + edad + ",telefono=" + telefono + ",correo='" + correo + "',celular=" + celular + ",a_heredo='" + a_h + "',a_no_pat='" + a_npat + "',a_pat='" + a_pat + "',alergias_a='" + alergia_a + "',alergias_m='"  + alergia_m + "',quirurgicos='" + quirur + "',trastornos='" + trastornos + "',suplementos='" + suplemento + "' WHERE id=" + registro;
+        String sql_antro = "UPDATE pacientes_info SET peso=" + peso + ",estatura=" + estatura + ",c_cintura=" + c_cintura + ",c_cadera=" + c_cadera + ",c_muneca=" + c_muneca + ",c_brazo=" + c_brazo + ",biceps=" + biceps + ",triceps=" + triceps + ",glucosa=" + glucosa + ",a_urico=" + a_urico + ",trigliceridos=" + trigliceridos + ",colesterol=" + colesterol + " WHERE id=" + registro;
         Connection co = con.conexion();
         Statement stm;
         try {
@@ -1594,7 +1697,12 @@ public class Editar_paciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1603,7 +1711,16 @@ public class Editar_paciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

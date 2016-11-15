@@ -26,6 +26,7 @@ public class Editar_contra extends javax.swing.JFrame {
      */
     public Editar_contra() {
         initComponents();
+        this.getContentPane().setBackground(new java.awt.Color(175, 228, 202));
         this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("../img//recursos/Icono.png")).getImage());
     }
@@ -51,6 +52,7 @@ public class Editar_contra extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Editar contraseña");
+        setBackground(new java.awt.Color(175, 228, 202));
 
         jLabel1.setText("Contraseña actual");
 
@@ -63,6 +65,7 @@ public class Editar_contra extends javax.swing.JFrame {
         jLabel4.setText("Llena todos los campos para cambiar tu contraseña");
 
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
@@ -70,6 +73,7 @@ public class Editar_contra extends javax.swing.JFrame {
         });
 
         btn_siguiente.setText("Aceptar");
+        btn_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_siguienteActionPerformed(evt);

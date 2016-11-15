@@ -26,6 +26,7 @@ public class Editar_info_personal extends javax.swing.JFrame {
     public Editar_info_personal() {
         try {
             initComponents();
+            this.getContentPane().setBackground(new java.awt.Color(175, 228, 202));
             this.setLocationRelativeTo(null);
             setIconImage(new ImageIcon(getClass().getResource("../img//recursos/Icono.png")).getImage());
             this.getContentPane().setBackground(new java.awt.Color(175, 228, 202));
@@ -78,6 +79,7 @@ public class Editar_info_personal extends javax.swing.JFrame {
         jLabel4.setText("Telefono");
 
         btn_siguiente.setText("Aceptar");
+        btn_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_siguienteActionPerformed(evt);
@@ -85,6 +87,7 @@ public class Editar_info_personal extends javax.swing.JFrame {
         });
 
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);

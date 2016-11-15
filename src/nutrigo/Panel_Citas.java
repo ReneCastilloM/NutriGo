@@ -19,10 +19,10 @@ public class Panel_Citas extends javax.swing.JPanel {
             Tabla.getColumnModel().getColumn(0).setPreferredWidth(50);
             Tabla.getColumnModel().getColumn(1).setPreferredWidth(50);
             Tabla.getColumnModel().getColumn(2).setPreferredWidth(100);
-            Tabla.getColumnModel().getColumn(3).setPreferredWidth(300);
-            Tabla.getColumnModel().getColumn(4).setPreferredWidth(240);
+            Tabla.getColumnModel().getColumn(3).setPreferredWidth(250);
+            Tabla.getColumnModel().getColumn(4).setPreferredWidth(200);
             Tabla.getColumnModel().getColumn(5).setPreferredWidth(80);
-            Tabla.getColumnModel().getColumn(5).setPreferredWidth(150);
+            Tabla.getColumnModel().getColumn(6).setPreferredWidth(270);
             Conectar con = new Conectar();
             Connection co = con.conexion();
             String sql = "SELECT id,hora,fecha,nombre,asunto,telefono_cita,correo FROM citas";
@@ -54,7 +54,6 @@ public class Panel_Citas extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(175, 228, 202));
         setPreferredSize(new java.awt.Dimension(1250, 600));
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -85,6 +84,7 @@ public class Panel_Citas extends javax.swing.JPanel {
         jButton1.setBackground(new java.awt.Color(102, 255, 102));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/agregar.png"))); // NOI18N
         jButton1.setText("Ingresar Cita");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -92,8 +92,10 @@ public class Panel_Citas extends javax.swing.JPanel {
         });
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/eliminar.png"))); // NOI18N
         jButton2.setText("Eliminar Cita");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -102,35 +104,41 @@ public class Panel_Citas extends javax.swing.JPanel {
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
         jButton3.setText("Editar Cita");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 208, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(607, 607, 607)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton1)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 852, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(190, 190, 190))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 127, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 998, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addGap(59, 59, 59)
+                .addComponent(jButton1)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(135, Short.MAX_VALUE))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -190,6 +198,16 @@ public class Panel_Citas extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Para eliminar un registro, debes seleccionar su respectiva fila de la tabla");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int fila = Tabla.getSelectedRow();
+        if (fila == -1){
+            JOptionPane.showMessageDialog(null, "Para editar el contenido de una cita debes seleccionar su respectiva fila de la tabla");
+            return;
+        }
+        Editar_citas editar = new Editar_citas();
+        editar.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
 

@@ -92,14 +92,27 @@ public class Panel_Pacientes extends javax.swing.JPanel {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/info.png"))); // NOI18N
         jButton1.setText("Ver Informacion");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/editar.png"))); // NOI18N
         jButton2.setText("Editar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 51, 51));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/eliminar.png"))); // NOI18N
         jButton3.setText("Eliminar");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -109,6 +122,7 @@ public class Panel_Pacientes extends javax.swing.JPanel {
         jButton4.setBackground(new java.awt.Color(102, 255, 102));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/agregar.png"))); // NOI18N
         jButton4.setText("Agregar Nuevo");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -210,6 +224,26 @@ public class Panel_Pacientes extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Para eliminar un registro, debes seleccionar su respectiva fila de la tabla");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int fila = Tabla.getSelectedRow();
+        if (fila == -1){
+            JOptionPane.showMessageDialog(null, "Para ver el contenido de un paciente debes seleccionar su respectiva fila de la tabla");
+            return;
+        }
+        Ver_paciente ver= new Ver_paciente();
+        ver.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int fila = Tabla.getSelectedRow();
+        if (fila == -1){
+            JOptionPane.showMessageDialog(null, "Para editar el contenido de una nota debes seleccionar su respectiva fila de la tabla");
+            return;
+        }
+        Editar_paciente editar = new Editar_paciente();
+        editar.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
