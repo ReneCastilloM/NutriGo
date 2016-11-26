@@ -9,9 +9,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javafx.beans.binding.Bindings.and;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,7 +24,10 @@ import static nutrigo.Panel_Dietas.Tabla;
  * @author Rene
  */
 public class Ingresar_dieta_2 extends javax.swing.JFrame {
-
+    
+    Conectar con = new Conectar();
+    Connection co = con.conexion();
+    
     public static int calorias;
     public static String titulo, notas;
     /**
@@ -73,6 +78,11 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion2_1 = new javax.swing.JTextArea();
         jScrollPane10 = new javax.swing.JScrollPane();
         cena_1 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         cena_2 = new javax.swing.JTextArea();
@@ -101,6 +111,11 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         comida_2 = new javax.swing.JTextArea();
         jScrollPane20 = new javax.swing.JScrollPane();
         colacion1_2 = new javax.swing.JTextArea();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
         cena_3 = new javax.swing.JTextArea();
@@ -129,6 +144,11 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         comida_3 = new javax.swing.JTextArea();
         jScrollPane30 = new javax.swing.JScrollPane();
         colacion1_3 = new javax.swing.JTextArea();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane31 = new javax.swing.JScrollPane();
         cena_4 = new javax.swing.JTextArea();
@@ -157,6 +177,11 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         comida_4 = new javax.swing.JTextArea();
         jScrollPane40 = new javax.swing.JScrollPane();
         colacion1_4 = new javax.swing.JTextArea();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane41 = new javax.swing.JScrollPane();
         cena_5 = new javax.swing.JTextArea();
@@ -185,6 +210,11 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         comida_5 = new javax.swing.JTextArea();
         jScrollPane50 = new javax.swing.JScrollPane();
         colacion1_5 = new javax.swing.JTextArea();
+        jButton23 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane51 = new javax.swing.JScrollPane();
         cena_6 = new javax.swing.JTextArea();
@@ -213,6 +243,11 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         comida_6 = new javax.swing.JTextArea();
         jScrollPane60 = new javax.swing.JScrollPane();
         colacion1_6 = new javax.swing.JTextArea();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane61 = new javax.swing.JScrollPane();
         cena_7 = new javax.swing.JTextArea();
@@ -241,10 +276,16 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         comida_7 = new javax.swing.JTextArea();
         jScrollPane70 = new javax.swing.JScrollPane();
         colacion1_7 = new javax.swing.JTextArea();
+        jButton33 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+        jButton35 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
+        jButton37 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Ingresar dieta");
 
         jPanel1.setBackground(new java.awt.Color(175, 228, 202));
 
@@ -312,47 +353,105 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         cena_1.setRows(3);
         jScrollPane10.setViewportView(cena_1);
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton3.setText("Llenar");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton4.setText("Llenar");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton5.setText("Llenar");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton6.setText("Llenar");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton7.setText("Llenar");
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(160, 160, 160))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel2)
+                        .addGap(223, 223, 223)
+                        .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane6))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane10))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane9))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton5)
+                                    .addComponent(jButton6)
+                                    .addComponent(jButton7)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton4)
+                                    .addComponent(jButton3))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,16 +459,20 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(17, 17, 17))
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -379,31 +482,46 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
                         .addGap(61, 61, 61)
                         .addComponent(jLabel6)
                         .addGap(66, 66, 66)
                         .addComponent(jLabel7)
-                        .addGap(42, 42, 42))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addGap(23, 23, 23)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lunes", jPanel1);
@@ -474,6 +592,51 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion1_2.setRows(3);
         jScrollPane20.setViewportView(colacion1_2);
 
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton8.setText("Llenar");
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton9.setText("Llenar");
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton10.setText("Llenar");
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton11.setText("Llenar");
+        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton12.setText("Llenar");
+        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -481,9 +644,9 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(220, 220, 220)
                 .addComponent(jLabel14)
-                .addGap(160, 160, 160))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,25 +658,38 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane14))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane18))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane19))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane20))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane14)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton9)
+                                .addComponent(jButton12))
+                            .addComponent(jButton8)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10)
+                            .addComponent(jButton11))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -521,51 +697,65 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel14))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel12))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel11))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel9)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel8)
-                        .addGap(42, 42, 42))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jLabel12))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel11))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel10)
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel9)
+                                .addGap(66, 66, 66)
+                                .addComponent(jLabel8)
+                                .addGap(42, 42, 42))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(15, Short.MAX_VALUE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))))
         );
 
         jTabbedPane1.addTab("Martes", jPanel2);
@@ -636,6 +826,51 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion1_3.setRows(3);
         jScrollPane30.setViewportView(colacion1_3);
 
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton13.setText("Llenar");
+        jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton14.setText("Llenar");
+        jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton15.setText("Llenar");
+        jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton16.setText("Llenar");
+        jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton17.setText("Llenar");
+        jButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -643,9 +878,9 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(225, 225, 225)
                 .addComponent(jLabel21)
-                .addGap(160, 160, 160))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -657,25 +892,33 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane30, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane24))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane28, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane28))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane29))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane30))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane24)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton14)
+                        .addComponent(jButton16)
+                        .addComponent(jButton17))
+                    .addComponent(jButton15, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton13, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -684,8 +927,8 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
                             .addComponent(jLabel21))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -727,7 +970,19 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(14, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
 
         jTabbedPane1.addTab("Miercoles", jPanel3);
@@ -788,46 +1043,101 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion1_4.setRows(3);
         jScrollPane40.setViewportView(colacion1_4);
 
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton18.setText("Llenar");
+        jButton18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton19.setText("Llenar");
+        jButton19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton20.setText("Llenar");
+        jButton20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton21.setText("Llenar");
+        jButton21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+
+        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton22.setText("Llenar");
+        jButton22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel28)
-                .addGap(160, 160, 160))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel24))
-                .addGap(29, 29, 29)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane40, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel27)
+                        .addGap(222, 222, 222)
+                        .addComponent(jLabel28)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel24))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane38))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane39))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane40))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane34)))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane34))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane38, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton19)
+                                .addComponent(jButton21)
+                                .addComponent(jButton22))
+                            .addComponent(jButton20, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton18, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -836,8 +1146,8 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
                             .addComponent(jLabel28))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -879,7 +1189,19 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(13, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
 
         jTabbedPane1.addTab("Jueves", jPanel4);
@@ -950,6 +1272,51 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion1_5.setRows(3);
         jScrollPane50.setViewportView(colacion1_5);
 
+        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton23.setText("Llenar");
+        jButton23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton24.setText("Llenar");
+        jButton24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton25.setText("Llenar");
+        jButton25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton26.setText("Llenar");
+        jButton26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton27.setText("Llenar");
+        jButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -957,9 +1324,9 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(225, 225, 225)
                 .addComponent(jLabel35)
-                .addGap(160, 160, 160))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -971,25 +1338,33 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane50, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane44))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane49, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane48, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane48))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane49))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane50))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane44)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton24)
+                        .addComponent(jButton26)
+                        .addComponent(jButton27))
+                    .addComponent(jButton25, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton23, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -998,8 +1373,8 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
                             .addComponent(jLabel35))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1041,7 +1416,19 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(15, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
 
         jTabbedPane1.addTab("Viernes", jPanel5);
@@ -1112,6 +1499,51 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion1_6.setRows(3);
         jScrollPane60.setViewportView(colacion1_6);
 
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton28.setText("Llenar");
+        jButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton29.setText("Llenar");
+        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton30.setText("Llenar");
+        jButton30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+
+        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton31.setText("Llenar");
+        jButton31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+
+        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton32.setText("Llenar");
+        jButton32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1119,9 +1551,9 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(jLabel41)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(223, 223, 223)
                 .addComponent(jLabel42)
-                .addGap(160, 160, 160))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1133,25 +1565,33 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane60, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane54))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane59, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane51, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane58, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane58))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane51, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane59))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane60))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane54)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton29)
+                        .addComponent(jButton31)
+                        .addComponent(jButton32))
+                    .addComponent(jButton30, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton28, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -1162,7 +1602,7 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel42))
+                            .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
@@ -1203,7 +1643,19 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(12, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
         jTabbedPane1.addTab("Sabado", jPanel6);
@@ -1274,6 +1726,51 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         colacion1_7.setRows(3);
         jScrollPane70.setViewportView(colacion1_7);
 
+        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton33.setText("Llenar");
+        jButton33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+
+        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton34.setText("Llenar");
+        jButton34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+
+        jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton35.setText("Llenar");
+        jButton35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
+
+        jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton36.setText("Llenar");
+        jButton36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
+
+        jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botones/llenar.png"))); // NOI18N
+        jButton37.setText("Llenar");
+        jButton37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton37ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1281,9 +1778,9 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(jLabel48)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(225, 225, 225)
                 .addComponent(jLabel49)
-                .addGap(160, 160, 160))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1295,25 +1792,33 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane70, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane64))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane69, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane61, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane68, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
+                        .addComponent(jScrollPane68))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane61, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane69))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane70))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane64)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton34)
+                        .addComponent(jButton36)
+                        .addComponent(jButton37))
+                    .addComponent(jButton35, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton33, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1322,8 +1827,8 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel48)
                             .addComponent(jLabel49))
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
@@ -1365,7 +1870,19 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(14, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton33, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
 
         jTabbedPane1.addTab("Domingo", jPanel7);
@@ -1390,23 +1907,23 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 11, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1459,65 +1976,123 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         String colacion2_7_txt = colacion2_7.getText();
         String cena_7_txt = cena_7.getText();
         
+        
+        String t_desayuno_1_txt = t_desayuno_1.getText();
+        String t_colacion1_1_txt = t_colacion1_1.getText();
+        String t_comida_1_txt = t_comida_1.getText();
+        String t_colacion2_1_txt = t_colacion2_1.getText();
+        String t_cena_1_txt = t_cena_1.getText();
+        
+        String t_desayuno_2_txt = t_desayuno_2.getText();
+        String t_colacion1_2_txt = t_colacion1_2.getText();
+        String t_comida_2_txt = t_comida_2.getText();
+        String t_colacion2_2_txt = t_colacion2_2.getText();
+        String t_cena_2_txt = t_cena_2.getText();
+        
+        String t_desayuno_3_txt = t_desayuno_3.getText();
+        String t_colacion1_3_txt = t_colacion1_3.getText();
+        String t_comida_3_txt = t_comida_3.getText();
+        String t_colacion2_3_txt = t_colacion2_3.getText();
+        String t_cena_3_txt = t_cena_3.getText();
+        
+        String t_desayuno_4_txt = t_desayuno_4.getText();
+        String t_colacion1_4_txt = t_colacion1_4.getText();
+        String t_comida_4_txt = t_comida_4.getText();
+        String t_colacion2_4_txt = t_colacion2_4.getText();
+        String t_cena_4_txt = t_cena_4.getText();
+        
+        String t_desayuno_5_txt = t_desayuno_5.getText();
+        String t_colacion1_5_txt = t_colacion1_5.getText();
+        String t_comida_5_txt = t_comida_5.getText();
+        String t_colacion2_5_txt = t_colacion2_5.getText();
+        String t_cena_5_txt = t_cena_5.getText();
+        
+        String t_desayuno_6_txt = t_desayuno_6.getText();
+        String t_colacion1_6_txt = t_colacion1_6.getText();
+        String t_comida_6_txt = t_comida_6.getText();
+        String t_colacion2_6_txt = t_colacion2_6.getText();
+        String t_cena_6_txt = t_cena_6.getText();
+        
+        String t_desayuno_7_txt = t_desayuno_7.getText();
+        String t_colacion1_7_txt = t_colacion1_7.getText();
+        String t_comida_7_txt = t_comida_7.getText();
+        String t_colacion2_7_txt = t_colacion2_7.getText();
+        String t_cena_7_txt = t_cena_7.getText();
+        
+        
         Calendar fecha = Calendar.getInstance();
         int ano = fecha.get(Calendar.YEAR);
         int mes = fecha.get(Calendar.MONTH) + 1;
         int dia = fecha.get(Calendar.DAY_OF_MONTH);
         String fecha_de_hoy = String.valueOf(ano) + "-" + String.valueOf(mes) + "-" + String.valueOf(dia);
         
-        Conectar con = new Conectar();
-        Connection co = con.conexion();
+        
         Statement stm;
         String sql="";
         if (calorias == 1000){
             sql = "INSERT INTO dietas_1000 VALUES(NULL,'" + titulo + "','" + fecha_de_hoy + "','" + 
-            desayuno_1_txt + "','" + colacion1_1_txt + "','" + comida_1_txt + "','" + colacion2_1_txt + "','" + cena_1_txt + "','" +
-            desayuno_2_txt + "','" + colacion1_2_txt + "','" + comida_2_txt + "','" + colacion2_2_txt + "','" + cena_2_txt + "','" +
-            desayuno_3_txt + "','" + colacion1_3_txt + "','" + comida_3_txt + "','" + colacion2_3_txt + "','" + cena_3_txt + "','" +
-            desayuno_4_txt + "','" + colacion1_4_txt + "','" + comida_4_txt + "','" + colacion2_4_txt + "','" + cena_4_txt + "','" +
-            desayuno_5_txt + "','" + colacion1_5_txt + "','" + comida_5_txt + "','" + colacion2_5_txt + "','" + cena_5_txt + "','" + 
-            desayuno_6_txt + "','" + colacion1_6_txt + "','" + comida_6_txt + "','" + colacion2_6_txt + "','" + cena_6_txt + "','" + 
-            desayuno_7_txt + "','" + colacion1_7_txt + "','" + comida_7_txt + "','" + colacion2_7_txt + "','" + cena_7_txt + "','" +  notas + "')";
+            t_desayuno_1_txt + "','" + t_desayuno_2_txt + "','" + t_desayuno_3_txt + "','" + t_desayuno_4_txt + "','" + t_desayuno_5_txt + "','" + t_desayuno_6_txt + "','" + t_desayuno_7_txt + "','" +
+            t_colacion1_1_txt + "','" + t_colacion1_2_txt + "','" + t_colacion1_3_txt + "','" + t_colacion1_4_txt + "','" + t_colacion1_5_txt + "','" + t_colacion1_6_txt + "','" + t_colacion1_7_txt + "','" +
+            t_comida_1_txt + "','" + t_comida_2_txt + "','" + t_comida_3_txt + "','" + t_comida_4_txt + "','" + t_comida_5_txt + "','" + t_comida_6_txt + "','" + t_comida_7_txt + "','" +
+            t_colacion2_1_txt + "','" + t_colacion2_2_txt + "','" + t_colacion2_3_txt + "','" + t_colacion2_4_txt + "','" + t_colacion2_5_txt + "','" + t_colacion2_6_txt + "','" + t_colacion2_7_txt + "','" +
+            t_cena_1_txt + "','" + t_cena_2_txt + "','" + t_cena_3_txt + "','" + t_cena_4_txt + "','" + t_cena_5_txt + "','" + t_cena_6_txt + "','" + t_cena_7_txt + "','" +
+            desayuno_1_txt + "','" + desayuno_2_txt + "','" + desayuno_3_txt + "','" + desayuno_4_txt + "','" + desayuno_5_txt + "','" + desayuno_6_txt + "','" + desayuno_7_txt + "','" +
+            colacion1_1_txt + "','" + colacion1_2_txt + "','" + colacion1_3_txt + "','" + colacion1_4_txt + "','" + colacion1_5_txt + "','" + colacion1_6_txt + "','" + colacion1_7_txt + "','" +
+            comida_1_txt + "','" + comida_2_txt + "','" + comida_3_txt + "','" + comida_4_txt + "','" + comida_5_txt + "','" + comida_6_txt + "','" + comida_7_txt + "','" +
+            colacion2_1_txt + "','" + colacion2_2_txt + "','" + colacion2_3_txt + "','" + colacion2_4_txt + "','" + colacion2_5_txt + "','" + colacion2_6_txt + "','" + colacion2_7_txt + "','" +
+            cena_1_txt + "','" + cena_2_txt + "','" + cena_3_txt + "','" + cena_4_txt + "','" + cena_5_txt + "','" + cena_6_txt + "','" + cena_7_txt + "','" + notas + "')";
         }
         else if(calorias == 1200){
             sql = "INSERT INTO dietas_1200 VALUES(NULL,'" + titulo + "','" + fecha_de_hoy + "','" + 
-            desayuno_1_txt + "','" + colacion1_1_txt + "','" + comida_1_txt + "','" + colacion2_1_txt + "','" + cena_1_txt + "','" +
-            desayuno_2_txt + "','" + colacion1_2_txt + "','" + comida_2_txt + "','" + colacion2_2_txt + "','" + cena_2_txt + "','" +
-            desayuno_3_txt + "','" + colacion1_3_txt + "','" + comida_3_txt + "','" + colacion2_3_txt + "','" + cena_3_txt + "','" +
-            desayuno_4_txt + "','" + colacion1_4_txt + "','" + comida_4_txt + "','" + colacion2_4_txt + "','" + cena_4_txt + "','" +
-            desayuno_5_txt + "','" + colacion1_5_txt + "','" + comida_5_txt + "','" + colacion2_5_txt + "','" + cena_5_txt + "','" + 
-            desayuno_6_txt + "','" + colacion1_6_txt + "','" + comida_6_txt + "','" + colacion2_6_txt + "','" + cena_6_txt + "','" + 
-            desayuno_7_txt + "','" + colacion1_7_txt + "','" + comida_7_txt + "','" + colacion2_7_txt + "','" + cena_7_txt + "','" +  notas + "')";
+            t_desayuno_1_txt + "','" + t_desayuno_2_txt + "','" + t_desayuno_3_txt + "','" + t_desayuno_4_txt + "','" + t_desayuno_5_txt + "','" + t_desayuno_6_txt + "','" + t_desayuno_7_txt + "','" +
+            t_colacion1_1_txt + "','" + t_colacion1_2_txt + "','" + t_colacion1_3_txt + "','" + t_colacion1_4_txt + "','" + t_colacion1_5_txt + "','" + t_colacion1_6_txt + "','" + t_colacion1_7_txt + "','" +
+            t_comida_1_txt + "','" + t_comida_2_txt + "','" + t_comida_3_txt + "','" + t_comida_4_txt + "','" + t_comida_5_txt + "','" + t_comida_6_txt + "','" + t_comida_7_txt + "','" +
+            t_colacion2_1_txt + "','" + t_colacion2_2_txt + "','" + t_colacion2_3_txt + "','" + t_colacion2_4_txt + "','" + t_colacion2_5_txt + "','" + t_colacion2_6_txt + "','" + t_colacion2_7_txt + "','" +
+            t_cena_1_txt + "','" + t_cena_2_txt + "','" + t_cena_3_txt + "','" + t_cena_4_txt + "','" + t_cena_5_txt + "','" + t_cena_6_txt + "','" + t_cena_7_txt + "','" +
+            desayuno_1_txt + "','" + desayuno_2_txt + "','" + desayuno_3_txt + "','" + desayuno_4_txt + "','" + desayuno_5_txt + "','" + desayuno_6_txt + "','" + desayuno_7_txt + "','" +
+            colacion1_1_txt + "','" + colacion1_2_txt + "','" + colacion1_3_txt + "','" + colacion1_4_txt + "','" + colacion1_5_txt + "','" + colacion1_6_txt + "','" + colacion1_7_txt + "','" +
+            comida_1_txt + "','" + comida_2_txt + "','" + comida_3_txt + "','" + comida_4_txt + "','" + comida_5_txt + "','" + comida_6_txt + "','" + comida_7_txt + "','" +
+            colacion2_1_txt + "','" + colacion2_2_txt + "','" + colacion2_3_txt + "','" + colacion2_4_txt + "','" + colacion2_5_txt + "','" + colacion2_6_txt + "','" + colacion2_7_txt + "','" +
+            cena_1_txt + "','" + cena_2_txt + "','" + cena_3_txt + "','" + cena_4_txt + "','" + cena_5_txt + "','" + cena_6_txt + "','" + cena_7_txt + "','" + notas + "')";
         }
         else if(calorias == 1400){
             sql = "INSERT INTO dietas_1400 VALUES(NULL,'" + titulo + "','" + fecha_de_hoy + "','" + 
-            desayuno_1_txt + "','" + colacion1_1_txt + "','" + comida_1_txt + "','" + colacion2_1_txt + "','" + cena_1_txt + "','" +
-            desayuno_2_txt + "','" + colacion1_2_txt + "','" + comida_2_txt + "','" + colacion2_2_txt + "','" + cena_2_txt + "','" +
-            desayuno_3_txt + "','" + colacion1_3_txt + "','" + comida_3_txt + "','" + colacion2_3_txt + "','" + cena_3_txt + "','" +
-            desayuno_4_txt + "','" + colacion1_4_txt + "','" + comida_4_txt + "','" + colacion2_4_txt + "','" + cena_4_txt + "','" +
-            desayuno_5_txt + "','" + colacion1_5_txt + "','" + comida_5_txt + "','" + colacion2_5_txt + "','" + cena_5_txt + "','" + 
-            desayuno_6_txt + "','" + colacion1_6_txt + "','" + comida_6_txt + "','" + colacion2_6_txt + "','" + cena_6_txt + "','" + 
-            desayuno_7_txt + "','" + colacion1_7_txt + "','" + comida_7_txt + "','" + colacion2_7_txt + "','" + cena_7_txt + "','" +  notas + "')";
+            t_desayuno_1_txt + "','" + t_desayuno_2_txt + "','" + t_desayuno_3_txt + "','" + t_desayuno_4_txt + "','" + t_desayuno_5_txt + "','" + t_desayuno_6_txt + "','" + t_desayuno_7_txt + "','" +
+            t_colacion1_1_txt + "','" + t_colacion1_2_txt + "','" + t_colacion1_3_txt + "','" + t_colacion1_4_txt + "','" + t_colacion1_5_txt + "','" + t_colacion1_6_txt + "','" + t_colacion1_7_txt + "','" +
+            t_comida_1_txt + "','" + t_comida_2_txt + "','" + t_comida_3_txt + "','" + t_comida_4_txt + "','" + t_comida_5_txt + "','" + t_comida_6_txt + "','" + t_comida_7_txt + "','" +
+            t_colacion2_1_txt + "','" + t_colacion2_2_txt + "','" + t_colacion2_3_txt + "','" + t_colacion2_4_txt + "','" + t_colacion2_5_txt + "','" + t_colacion2_6_txt + "','" + t_colacion2_7_txt + "','" +
+            t_cena_1_txt + "','" + t_cena_2_txt + "','" + t_cena_3_txt + "','" + t_cena_4_txt + "','" + t_cena_5_txt + "','" + t_cena_6_txt + "','" + t_cena_7_txt + "','" +
+            desayuno_1_txt + "','" + desayuno_2_txt + "','" + desayuno_3_txt + "','" + desayuno_4_txt + "','" + desayuno_5_txt + "','" + desayuno_6_txt + "','" + desayuno_7_txt + "','" +
+            colacion1_1_txt + "','" + colacion1_2_txt + "','" + colacion1_3_txt + "','" + colacion1_4_txt + "','" + colacion1_5_txt + "','" + colacion1_6_txt + "','" + colacion1_7_txt + "','" +
+            comida_1_txt + "','" + comida_2_txt + "','" + comida_3_txt + "','" + comida_4_txt + "','" + comida_5_txt + "','" + comida_6_txt + "','" + comida_7_txt + "','" +
+            colacion2_1_txt + "','" + colacion2_2_txt + "','" + colacion2_3_txt + "','" + colacion2_4_txt + "','" + colacion2_5_txt + "','" + colacion2_6_txt + "','" + colacion2_7_txt + "','" +
+            cena_1_txt + "','" + cena_2_txt + "','" + cena_3_txt + "','" + cena_4_txt + "','" + cena_5_txt + "','" + cena_6_txt + "','" + cena_7_txt + "','" + notas + "')";
         }
         else if(calorias==1600){
             sql = "INSERT INTO dietas_1600 VALUES(NULL,'" + titulo + "','" + fecha_de_hoy + "','" + 
-            desayuno_1_txt + "','" + colacion1_1_txt + "','" + comida_1_txt + "','" + colacion2_1_txt + "','" + cena_1_txt + "','" +
-            desayuno_2_txt + "','" + colacion1_2_txt + "','" + comida_2_txt + "','" + colacion2_2_txt + "','" + cena_2_txt + "','" +
-            desayuno_3_txt + "','" + colacion1_3_txt + "','" + comida_3_txt + "','" + colacion2_3_txt + "','" + cena_3_txt + "','" +
-            desayuno_4_txt + "','" + colacion1_4_txt + "','" + comida_4_txt + "','" + colacion2_4_txt + "','" + cena_4_txt + "','" +
-            desayuno_5_txt + "','" + colacion1_5_txt + "','" + comida_5_txt + "','" + colacion2_5_txt + "','" + cena_5_txt + "','" + 
-            desayuno_6_txt + "','" + colacion1_6_txt + "','" + comida_6_txt + "','" + colacion2_6_txt + "','" + cena_6_txt + "','" + 
-            desayuno_7_txt + "','" + colacion1_7_txt + "','" + comida_7_txt + "','" + colacion2_7_txt + "','" + cena_7_txt + "','" +  notas + "')";
+            t_desayuno_1_txt + "','" + t_desayuno_2_txt + "','" + t_desayuno_3_txt + "','" + t_desayuno_4_txt + "','" + t_desayuno_5_txt + "','" + t_desayuno_6_txt + "','" + t_desayuno_7_txt + "','" +
+            t_colacion1_1_txt + "','" + t_colacion1_2_txt + "','" + t_colacion1_3_txt + "','" + t_colacion1_4_txt + "','" + t_colacion1_5_txt + "','" + t_colacion1_6_txt + "','" + t_colacion1_7_txt + "','" +
+            t_comida_1_txt + "','" + t_comida_2_txt + "','" + t_comida_3_txt + "','" + t_comida_4_txt + "','" + t_comida_5_txt + "','" + t_comida_6_txt + "','" + t_comida_7_txt + "','" +
+            t_colacion2_1_txt + "','" + t_colacion2_2_txt + "','" + t_colacion2_3_txt + "','" + t_colacion2_4_txt + "','" + t_colacion2_5_txt + "','" + t_colacion2_6_txt + "','" + t_colacion2_7_txt + "','" +
+            t_cena_1_txt + "','" + t_cena_2_txt + "','" + t_cena_3_txt + "','" + t_cena_4_txt + "','" + t_cena_5_txt + "','" + t_cena_6_txt + "','" + t_cena_7_txt + "','" +
+            desayuno_1_txt + "','" + desayuno_2_txt + "','" + desayuno_3_txt + "','" + desayuno_4_txt + "','" + desayuno_5_txt + "','" + desayuno_6_txt + "','" + desayuno_7_txt + "','" +
+            colacion1_1_txt + "','" + colacion1_2_txt + "','" + colacion1_3_txt + "','" + colacion1_4_txt + "','" + colacion1_5_txt + "','" + colacion1_6_txt + "','" + colacion1_7_txt + "','" +
+            comida_1_txt + "','" + comida_2_txt + "','" + comida_3_txt + "','" + comida_4_txt + "','" + comida_5_txt + "','" + comida_6_txt + "','" + comida_7_txt + "','" +
+            colacion2_1_txt + "','" + colacion2_2_txt + "','" + colacion2_3_txt + "','" + colacion2_4_txt + "','" + colacion2_5_txt + "','" + colacion2_6_txt + "','" + colacion2_7_txt + "','" +
+            cena_1_txt + "','" + cena_2_txt + "','" + cena_3_txt + "','" + cena_4_txt + "','" + cena_5_txt + "','" + cena_6_txt + "','" + cena_7_txt + "','" + notas + "')";
         }
         else{
             sql = "INSERT INTO dietas_1800 VALUES(NULL,'" + titulo + "','" + fecha_de_hoy + "','" + 
-            desayuno_1_txt + "','" + colacion1_1_txt + "','" + comida_1_txt + "','" + colacion2_1_txt + "','" + cena_1_txt + "','" +
-            desayuno_2_txt + "','" + colacion1_2_txt + "','" + comida_2_txt + "','" + colacion2_2_txt + "','" + cena_2_txt + "','" +
-            desayuno_3_txt + "','" + colacion1_3_txt + "','" + comida_3_txt + "','" + colacion2_3_txt + "','" + cena_3_txt + "','" +
-            desayuno_4_txt + "','" + colacion1_4_txt + "','" + comida_4_txt + "','" + colacion2_4_txt + "','" + cena_4_txt + "','" +
-            desayuno_5_txt + "','" + colacion1_5_txt + "','" + comida_5_txt + "','" + colacion2_5_txt + "','" + cena_5_txt + "','" + 
-            desayuno_6_txt + "','" + colacion1_6_txt + "','" + comida_6_txt + "','" + colacion2_6_txt + "','" + cena_6_txt + "','" + 
-            desayuno_7_txt + "','" + colacion1_7_txt + "','" + comida_7_txt + "','" + colacion2_7_txt + "','" + cena_7_txt + "','" +  notas + "')";
+            t_desayuno_1_txt + "','" + t_desayuno_2_txt + "','" + t_desayuno_3_txt + "','" + t_desayuno_4_txt + "','" + t_desayuno_5_txt + "','" + t_desayuno_6_txt + "','" + t_desayuno_7_txt + "','" +
+            t_colacion1_1_txt + "','" + t_colacion1_2_txt + "','" + t_colacion1_3_txt + "','" + t_colacion1_4_txt + "','" + t_colacion1_5_txt + "','" + t_colacion1_6_txt + "','" + t_colacion1_7_txt + "','" +
+            t_comida_1_txt + "','" + t_comida_2_txt + "','" + t_comida_3_txt + "','" + t_comida_4_txt + "','" + t_comida_5_txt + "','" + t_comida_6_txt + "','" + t_comida_7_txt + "','" +
+            t_colacion2_1_txt + "','" + t_colacion2_2_txt + "','" + t_colacion2_3_txt + "','" + t_colacion2_4_txt + "','" + t_colacion2_5_txt + "','" + t_colacion2_6_txt + "','" + t_colacion2_7_txt + "','" +
+            t_cena_1_txt + "','" + t_cena_2_txt + "','" + t_cena_3_txt + "','" + t_cena_4_txt + "','" + t_cena_5_txt + "','" + t_cena_6_txt + "','" + t_cena_7_txt + "','" +
+            desayuno_1_txt + "','" + desayuno_2_txt + "','" + desayuno_3_txt + "','" + desayuno_4_txt + "','" + desayuno_5_txt + "','" + desayuno_6_txt + "','" + desayuno_7_txt + "','" +
+            colacion1_1_txt + "','" + colacion1_2_txt + "','" + colacion1_3_txt + "','" + colacion1_4_txt + "','" + colacion1_5_txt + "','" + colacion1_6_txt + "','" + colacion1_7_txt + "','" +
+            comida_1_txt + "','" + comida_2_txt + "','" + comida_3_txt + "','" + comida_4_txt + "','" + comida_5_txt + "','" + comida_6_txt + "','" + comida_7_txt + "','" +
+            colacion2_1_txt + "','" + colacion2_2_txt + "','" + colacion2_3_txt + "','" + colacion2_4_txt + "','" + colacion2_5_txt + "','" + colacion2_6_txt + "','" + colacion2_7_txt + "','" +
+            cena_1_txt + "','" + cena_2_txt + "','" + cena_3_txt + "','" + cena_4_txt + "','" + cena_5_txt + "','" + cena_6_txt + "','" + cena_7_txt + "','" + notas + "')";
         }
         
         try {
@@ -1605,6 +2180,1231 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_1.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_1.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_1.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_1.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_1.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_1.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_1.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_1.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_1.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_1.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_2.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_2.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_2.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_2.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_2.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_2.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_2.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_2.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_2.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_2.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_3.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_3.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_3.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_3.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_3.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_3.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_3.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_3.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_3.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_3.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_4.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_4.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_4.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_4.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_4.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_4.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_4.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_4.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_4.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_4.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_5.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_5.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_5.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_5.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_5.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_5.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_5.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_5.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_5.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_5.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_6.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_6.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_6.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_6.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_6.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_6.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_6.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_6.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_6.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_6.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Desayuno'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_desayuno_7.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    desayuno_7.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion1_7.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion1_7.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Comida'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_comida_7.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    comida_7.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Colacion'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_colacion2_7.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    colacion2_7.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton36ActionPerformed
+
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
+        int contador = 0;
+        String sql = "SELECT titulo,ingredientes FROM comidas_predeterminadas WHERE calorias=" + calorias + " AND comida='Cena'";
+        Statement st;
+        try {
+            st = co.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                contador++;
+            }
+            if (contador == 0){
+                JOptionPane.showMessageDialog(null, "Actualmente no tienes elementos predeterminados en esta categoria");
+                return;
+            }
+            String[] alimentos = new String[contador];
+            String[] ingredientes = new String[contador];
+            int i = 0;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                alimentos[i] = rs.getString(1);
+                ingredientes[i] = rs.getString(2);
+                i++;
+            }
+            String valor = (String) JOptionPane.showInputDialog(this, "Seleccione un alimento", "Seleccionar alimento predeterminado", JOptionPane.INFORMATION_MESSAGE, null, alimentos, alimentos[0]);
+            t_cena_7.setText(valor);
+            for(int x=0; x<contador; x++){
+                if(alimentos[x].equals(valor)){
+                    cena_7.setText(ingredientes[x]);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al taratar de mostrar los alimentos predeterminados");
+        }
+    }//GEN-LAST:event_jButton37ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1678,7 +3478,42 @@ public class Ingresar_dieta_2 extends javax.swing.JFrame {
     private javax.swing.JTextArea desayuno_6;
     private javax.swing.JTextArea desayuno_7;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

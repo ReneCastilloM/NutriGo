@@ -24,6 +24,7 @@ public class Panel_Inicio extends javax.swing.JPanel {
      */
     public Panel_Inicio() {
         initComponents();
+        Tabla_notas.setDefaultRenderer(Object.class, new Colores_tabla_inicio());
         try{
             DefaultTableModel modelo = (DefaultTableModel) Tabla_citas.getModel();
             Tabla_citas.getColumnModel().getColumn(0).setPreferredWidth(50);

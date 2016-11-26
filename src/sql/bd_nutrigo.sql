@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2016 a las 10:11:20
+-- Tiempo de generación: 26-11-2016 a las 04:17:55
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -42,8 +42,502 @@ CREATE TABLE `citas` (
 
 INSERT INTO `citas` (`id`, `nombre`, `correo`, `fecha`, `hora`, `asunto`, `telefono_cita`) VALUES
 (6, 'Pedro', 'pe@correo.com', '29/11/2016', '10:00', 'Cita 6', '12312'),
-(7, 'EEE', '321', '17/11/2016', '23:00', '222', '123'),
-(8, 'XXAAAS', 'sdcscscs', '14/11/2016', '08:00', 'bhbhbhb', '122333');
+(7, 'EEEx', '321', '17/11/2016', '23:00', '222', '123'),
+(8, 'XXAAAS', 'sdcscscs', '14/11/2016', '08:00', 'bhbhbhb', '122333'),
+(9, 'Rene Castillo', 'rene@hotmail.com', '15/11/2016', '11:00', 'Primera cita', '202202020'),
+(10, 'Eddie Lozano', 'ce@uanl.mx', '15/11/2016', '13:00', 'X', '12344522'),
+(11, 'Jose Perez', 'jose@hotmail.com', '15/11/2016', '19:00', '123', '0002020'),
+(12, 'Jaime Pedraza', 'jaime@gmail.com', '15/11/2016', '6:00', 'Asuntin', '0000020202202'),
+(13, 'Pablo Escobar', 'pablito@hotmail.com', '15/11/2016', '21:00', 'Sin asunto', '123321456'),
+(14, 'Maria Alejandra Hernandez', 'maria@hotmail.com', '15/11/2016', '10:00', 'No', '8885552220'),
+(15, 'Ernesto Marquez', 'enriquemarquez@hotmail.com', '15/11/2016', '15:00', 'Seguimiento de resultados', '5544226458');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comidas_predeterminadas`
+--
+
+CREATE TABLE `comidas_predeterminadas` (
+  `id` int(3) NOT NULL,
+  `calorias` int(4) NOT NULL,
+  `comida` varchar(15) NOT NULL,
+  `titulo` varchar(70) NOT NULL,
+  `ingredientes` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `comidas_predeterminadas`
+--
+
+INSERT INTO `comidas_predeterminadas` (`id`, `calorias`, `comida`, `titulo`, `ingredientes`) VALUES
+(1, 1600, 'Cena', 'Quesadillas de queso panela', 'con aguacate y queso sin sodio'),
+(3, 1400, 'Desayuno', 'Cereal con leche', 'Cereal con leche descremada'),
+(4, 1000, 'Colacion', 'Mnzana y almendras', 'Media pieza de manzana golden con 10 almendras'),
+(5, 1800, 'Comida', 'Pollito', 'con esparragos y patatas'),
+(6, 1600, 'Cena', 'Cereal y yogurth', '1 taza de cereal\n150 ml de yogurth\n10 nueces');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `dietas_1000`
+--
+
+CREATE TABLE `dietas_1000` (
+  `id` int(2) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `fecha` varchar(10) NOT NULL,
+  `t_desayuno_1` varchar(60) NOT NULL,
+  `t_desayuno_2` varchar(60) NOT NULL,
+  `t_desayuno_3` varchar(60) NOT NULL,
+  `t_desayuno_4` varchar(60) NOT NULL,
+  `t_desayuno_5` varchar(60) NOT NULL,
+  `t_desayuno_6` varchar(60) NOT NULL,
+  `t_desayuno_7` varchar(60) NOT NULL,
+  `t_colacion1_1` varchar(60) NOT NULL,
+  `t_colacion1_2` varchar(60) NOT NULL,
+  `t_colacion1_3` varchar(60) NOT NULL,
+  `t_colacion1_4` varchar(60) NOT NULL,
+  `t_colacion1_5` varchar(60) NOT NULL,
+  `t_colacion1_6` varchar(60) NOT NULL,
+  `t_colacion1_7` varchar(60) NOT NULL,
+  `t_comida_1` varchar(60) NOT NULL,
+  `t_comida_2` varchar(60) NOT NULL,
+  `t_comida_3` varchar(60) NOT NULL,
+  `t_comida_4` varchar(60) NOT NULL,
+  `t_comida_5` varchar(60) NOT NULL,
+  `t_comida_6` varchar(60) NOT NULL,
+  `t_comida_7` varchar(60) NOT NULL,
+  `t_colacion2_1` varchar(60) NOT NULL,
+  `t_colacion2_2` varchar(60) NOT NULL,
+  `t_colacion2_3` varchar(60) NOT NULL,
+  `t_colacion2_4` varchar(60) NOT NULL,
+  `t_colacion2_5` varchar(60) NOT NULL,
+  `t_colacion2_6` varchar(60) NOT NULL,
+  `t_colacion2_7` varchar(60) NOT NULL,
+  `t_cena_1` varchar(60) NOT NULL,
+  `t_cena_2` varchar(60) NOT NULL,
+  `t_cena_3` varchar(60) NOT NULL,
+  `t_cena_4` varchar(60) NOT NULL,
+  `t_cena_5` varchar(60) NOT NULL,
+  `t_cena_6` varchar(60) NOT NULL,
+  `t_cena_7` varchar(60) NOT NULL,
+  `desayuno_1` varchar(300) NOT NULL,
+  `desayuno_2` varchar(300) NOT NULL,
+  `desayuno_3` varchar(300) NOT NULL,
+  `desayuno_4` varchar(300) NOT NULL,
+  `desayuno_5` varchar(300) NOT NULL,
+  `desayuno_6` varchar(300) NOT NULL,
+  `desayuno_7` varchar(300) NOT NULL,
+  `colacion1_1` varchar(300) NOT NULL,
+  `colacion1_2` varchar(300) NOT NULL,
+  `colacion1_3` varchar(300) NOT NULL,
+  `colacion1_4` varchar(300) NOT NULL,
+  `colacion1_5` varchar(300) NOT NULL,
+  `colacion1_6` varchar(300) NOT NULL,
+  `colacion1_7` varchar(300) NOT NULL,
+  `comida_1` varchar(300) NOT NULL,
+  `comida_2` varchar(300) NOT NULL,
+  `comida_3` varchar(300) NOT NULL,
+  `comida_4` varchar(300) NOT NULL,
+  `comida_5` varchar(300) NOT NULL,
+  `comida_6` varchar(300) NOT NULL,
+  `comida_7` varchar(300) NOT NULL,
+  `colacion2_1` varchar(300) NOT NULL,
+  `colacion2_2` varchar(300) NOT NULL,
+  `colacion2_3` varchar(300) NOT NULL,
+  `colacion2_4` varchar(300) NOT NULL,
+  `colacion2_5` varchar(300) NOT NULL,
+  `colacion2_6` varchar(300) NOT NULL,
+  `colacion2_7` varchar(300) NOT NULL,
+  `cena_1` varchar(300) NOT NULL,
+  `cena_2` varchar(300) NOT NULL,
+  `cena_3` varchar(300) NOT NULL,
+  `cena_4` varchar(300) NOT NULL,
+  `cena_5` varchar(300) NOT NULL,
+  `cena_6` varchar(300) NOT NULL,
+  `cena_7` varchar(300) NOT NULL,
+  `notas` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `dietas_1000`
+--
+
+INSERT INTO `dietas_1000` (`id`, `titulo`, `fecha`, `t_desayuno_1`, `t_desayuno_2`, `t_desayuno_3`, `t_desayuno_4`, `t_desayuno_5`, `t_desayuno_6`, `t_desayuno_7`, `t_colacion1_1`, `t_colacion1_2`, `t_colacion1_3`, `t_colacion1_4`, `t_colacion1_5`, `t_colacion1_6`, `t_colacion1_7`, `t_comida_1`, `t_comida_2`, `t_comida_3`, `t_comida_4`, `t_comida_5`, `t_comida_6`, `t_comida_7`, `t_colacion2_1`, `t_colacion2_2`, `t_colacion2_3`, `t_colacion2_4`, `t_colacion2_5`, `t_colacion2_6`, `t_colacion2_7`, `t_cena_1`, `t_cena_2`, `t_cena_3`, `t_cena_4`, `t_cena_5`, `t_cena_6`, `t_cena_7`, `desayuno_1`, `desayuno_2`, `desayuno_3`, `desayuno_4`, `desayuno_5`, `desayuno_6`, `desayuno_7`, `colacion1_1`, `colacion1_2`, `colacion1_3`, `colacion1_4`, `colacion1_5`, `colacion1_6`, `colacion1_7`, `comida_1`, `comida_2`, `comida_3`, `comida_4`, `comida_5`, `comida_6`, `comida_7`, `colacion2_1`, `colacion2_2`, `colacion2_3`, `colacion2_4`, `colacion2_5`, `colacion2_6`, `colacion2_7`, `cena_1`, `cena_2`, `cena_3`, `cena_4`, `cena_5`, `cena_6`, `cena_7`, `notas`) VALUES
+(1, 'Titulo 1', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', ''),
+(2, 'Ejemplo titulo 2', '2016-11-13', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', ''),
+(3, 'Titulin', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'nono'),
+(4, 'Titulo de la nota', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Especificacion por defecto'),
+(5, 'ASD', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Especificacion'),
+(6, 'Titulo provisional', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sin especificacion'),
+(7, 'Tituliini', '2016-11-15', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sin notas'),
+(8, 'X', '2016-11-15', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'No');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `dietas_1200`
+--
+
+CREATE TABLE `dietas_1200` (
+  `id` int(2) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `fecha` varchar(10) NOT NULL,
+  `t_desayuno_1` varchar(60) NOT NULL,
+  `t_desayuno_2` varchar(60) NOT NULL,
+  `t_desayuno_3` varchar(60) NOT NULL,
+  `t_desayuno_4` varchar(60) NOT NULL,
+  `t_desayuno_5` varchar(60) NOT NULL,
+  `t_desayuno_6` varchar(60) NOT NULL,
+  `t_desayuno_7` varchar(60) NOT NULL,
+  `t_colacion1_1` varchar(60) NOT NULL,
+  `t_colacion1_2` varchar(60) NOT NULL,
+  `t_colacion1_3` varchar(60) NOT NULL,
+  `t_colacion1_4` varchar(60) NOT NULL,
+  `t_colacion1_5` varchar(60) NOT NULL,
+  `t_colacion1_6` varchar(60) NOT NULL,
+  `t_colacion1_7` varchar(60) NOT NULL,
+  `t_comida_1` varchar(60) NOT NULL,
+  `t_comida_2` varchar(60) NOT NULL,
+  `t_comida_3` varchar(60) NOT NULL,
+  `t_comida_4` varchar(60) NOT NULL,
+  `t_comida_5` varchar(60) NOT NULL,
+  `t_comida_6` varchar(60) NOT NULL,
+  `t_comida_7` varchar(60) NOT NULL,
+  `t_colacion2_1` varchar(60) NOT NULL,
+  `t_colacion2_2` varchar(60) NOT NULL,
+  `t_colacion2_3` varchar(60) NOT NULL,
+  `t_colacion2_4` varchar(60) NOT NULL,
+  `t_colacion2_5` varchar(60) NOT NULL,
+  `t_colacion2_6` varchar(60) NOT NULL,
+  `t_colacion2_7` varchar(60) NOT NULL,
+  `t_cena_1` varchar(60) NOT NULL,
+  `t_cena_2` varchar(60) NOT NULL,
+  `t_cena_3` varchar(60) NOT NULL,
+  `t_cena_4` varchar(60) NOT NULL,
+  `t_cena_5` varchar(60) NOT NULL,
+  `t_cena_6` varchar(60) NOT NULL,
+  `t_cena_7` varchar(60) NOT NULL,
+  `desayuno_1` varchar(300) NOT NULL,
+  `desayuno_2` varchar(300) NOT NULL,
+  `desayuno_3` varchar(300) NOT NULL,
+  `desayuno_4` varchar(300) NOT NULL,
+  `desayuno_5` varchar(300) NOT NULL,
+  `desayuno_6` varchar(300) NOT NULL,
+  `desayuno_7` varchar(300) NOT NULL,
+  `colacion1_1` varchar(300) NOT NULL,
+  `colacion1_2` varchar(300) NOT NULL,
+  `colacion1_3` varchar(300) NOT NULL,
+  `colacion1_4` varchar(300) NOT NULL,
+  `colacion1_5` varchar(300) NOT NULL,
+  `colacion1_6` varchar(300) NOT NULL,
+  `colacion1_7` varchar(300) NOT NULL,
+  `comida_1` varchar(300) NOT NULL,
+  `comida_2` varchar(300) NOT NULL,
+  `comida_3` varchar(300) NOT NULL,
+  `comida_4` varchar(300) NOT NULL,
+  `comida_5` varchar(300) NOT NULL,
+  `comida_6` varchar(300) NOT NULL,
+  `comida_7` varchar(300) NOT NULL,
+  `colacion2_1` varchar(300) NOT NULL,
+  `colacion2_2` varchar(300) NOT NULL,
+  `colacion2_3` varchar(300) NOT NULL,
+  `colacion2_4` varchar(300) NOT NULL,
+  `colacion2_5` varchar(300) NOT NULL,
+  `colacion2_6` varchar(300) NOT NULL,
+  `colacion2_7` varchar(300) NOT NULL,
+  `cena_1` varchar(300) NOT NULL,
+  `cena_2` varchar(300) NOT NULL,
+  `cena_3` varchar(300) NOT NULL,
+  `cena_4` varchar(300) NOT NULL,
+  `cena_5` varchar(300) NOT NULL,
+  `cena_6` varchar(300) NOT NULL,
+  `cena_7` varchar(300) NOT NULL,
+  `notas` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `dietas_1200`
+--
+
+INSERT INTO `dietas_1200` (`id`, `titulo`, `fecha`, `t_desayuno_1`, `t_desayuno_2`, `t_desayuno_3`, `t_desayuno_4`, `t_desayuno_5`, `t_desayuno_6`, `t_desayuno_7`, `t_colacion1_1`, `t_colacion1_2`, `t_colacion1_3`, `t_colacion1_4`, `t_colacion1_5`, `t_colacion1_6`, `t_colacion1_7`, `t_comida_1`, `t_comida_2`, `t_comida_3`, `t_comida_4`, `t_comida_5`, `t_comida_6`, `t_comida_7`, `t_colacion2_1`, `t_colacion2_2`, `t_colacion2_3`, `t_colacion2_4`, `t_colacion2_5`, `t_colacion2_6`, `t_colacion2_7`, `t_cena_1`, `t_cena_2`, `t_cena_3`, `t_cena_4`, `t_cena_5`, `t_cena_6`, `t_cena_7`, `desayuno_1`, `desayuno_2`, `desayuno_3`, `desayuno_4`, `desayuno_5`, `desayuno_6`, `desayuno_7`, `colacion1_1`, `colacion1_2`, `colacion1_3`, `colacion1_4`, `colacion1_5`, `colacion1_6`, `colacion1_7`, `comida_1`, `comida_2`, `comida_3`, `comida_4`, `comida_5`, `comida_6`, `comida_7`, `colacion2_1`, `colacion2_2`, `colacion2_3`, `colacion2_4`, `colacion2_5`, `colacion2_6`, `colacion2_7`, `cena_1`, `cena_2`, `cena_3`, `cena_4`, `cena_5`, `cena_6`, `cena_7`, `notas`) VALUES
+(1, 'Titulo 1', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', ''),
+(2, 'Ejemplo titulo 2', '2016-11-13', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `dietas_1400`
+--
+
+CREATE TABLE `dietas_1400` (
+  `id` int(2) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `fecha` varchar(10) NOT NULL,
+  `t_desayuno_1` varchar(60) NOT NULL,
+  `t_desayuno_2` varchar(60) NOT NULL,
+  `t_desayuno_3` varchar(60) NOT NULL,
+  `t_desayuno_4` varchar(60) NOT NULL,
+  `t_desayuno_5` varchar(60) NOT NULL,
+  `t_desayuno_6` varchar(60) NOT NULL,
+  `t_desayuno_7` varchar(60) NOT NULL,
+  `t_colacion1_1` varchar(60) NOT NULL,
+  `t_colacion1_2` varchar(60) NOT NULL,
+  `t_colacion1_3` varchar(60) NOT NULL,
+  `t_colacion1_4` varchar(60) NOT NULL,
+  `t_colacion1_5` varchar(60) NOT NULL,
+  `t_colacion1_6` varchar(60) NOT NULL,
+  `t_colacion1_7` varchar(60) NOT NULL,
+  `t_comida_1` varchar(60) NOT NULL,
+  `t_comida_2` varchar(60) NOT NULL,
+  `t_comida_3` varchar(60) NOT NULL,
+  `t_comida_4` varchar(60) NOT NULL,
+  `t_comida_5` varchar(60) NOT NULL,
+  `t_comida_6` varchar(60) NOT NULL,
+  `t_comida_7` varchar(60) NOT NULL,
+  `t_colacion2_1` varchar(60) NOT NULL,
+  `t_colacion2_2` varchar(60) NOT NULL,
+  `t_colacion2_3` varchar(60) NOT NULL,
+  `t_colacion2_4` varchar(60) NOT NULL,
+  `t_colacion2_5` varchar(60) NOT NULL,
+  `t_colacion2_6` varchar(60) NOT NULL,
+  `t_colacion2_7` varchar(60) NOT NULL,
+  `t_cena_1` varchar(60) NOT NULL,
+  `t_cena_2` varchar(60) NOT NULL,
+  `t_cena_3` varchar(60) NOT NULL,
+  `t_cena_4` varchar(60) NOT NULL,
+  `t_cena_5` varchar(60) NOT NULL,
+  `t_cena_6` varchar(60) NOT NULL,
+  `t_cena_7` varchar(60) NOT NULL,
+  `desayuno_1` varchar(300) NOT NULL,
+  `desayuno_2` varchar(300) NOT NULL,
+  `desayuno_3` varchar(300) NOT NULL,
+  `desayuno_4` varchar(300) NOT NULL,
+  `desayuno_5` varchar(300) NOT NULL,
+  `desayuno_6` varchar(300) NOT NULL,
+  `desayuno_7` varchar(300) NOT NULL,
+  `colacion1_1` varchar(300) NOT NULL,
+  `colacion1_2` varchar(300) NOT NULL,
+  `colacion1_3` varchar(300) NOT NULL,
+  `colacion1_4` varchar(300) NOT NULL,
+  `colacion1_5` varchar(300) NOT NULL,
+  `colacion1_6` varchar(300) NOT NULL,
+  `colacion1_7` varchar(300) NOT NULL,
+  `comida_1` varchar(300) NOT NULL,
+  `comida_2` varchar(300) NOT NULL,
+  `comida_3` varchar(300) NOT NULL,
+  `comida_4` varchar(300) NOT NULL,
+  `comida_5` varchar(300) NOT NULL,
+  `comida_6` varchar(300) NOT NULL,
+  `comida_7` varchar(300) NOT NULL,
+  `colacion2_1` varchar(300) NOT NULL,
+  `colacion2_2` varchar(300) NOT NULL,
+  `colacion2_3` varchar(300) NOT NULL,
+  `colacion2_4` varchar(300) NOT NULL,
+  `colacion2_5` varchar(300) NOT NULL,
+  `colacion2_6` varchar(300) NOT NULL,
+  `colacion2_7` varchar(300) NOT NULL,
+  `cena_1` varchar(300) NOT NULL,
+  `cena_2` varchar(300) NOT NULL,
+  `cena_3` varchar(300) NOT NULL,
+  `cena_4` varchar(300) NOT NULL,
+  `cena_5` varchar(300) NOT NULL,
+  `cena_6` varchar(300) NOT NULL,
+  `cena_7` varchar(300) NOT NULL,
+  `notas` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `dietas_1400`
+--
+
+INSERT INTO `dietas_1400` (`id`, `titulo`, `fecha`, `t_desayuno_1`, `t_desayuno_2`, `t_desayuno_3`, `t_desayuno_4`, `t_desayuno_5`, `t_desayuno_6`, `t_desayuno_7`, `t_colacion1_1`, `t_colacion1_2`, `t_colacion1_3`, `t_colacion1_4`, `t_colacion1_5`, `t_colacion1_6`, `t_colacion1_7`, `t_comida_1`, `t_comida_2`, `t_comida_3`, `t_comida_4`, `t_comida_5`, `t_comida_6`, `t_comida_7`, `t_colacion2_1`, `t_colacion2_2`, `t_colacion2_3`, `t_colacion2_4`, `t_colacion2_5`, `t_colacion2_6`, `t_colacion2_7`, `t_cena_1`, `t_cena_2`, `t_cena_3`, `t_cena_4`, `t_cena_5`, `t_cena_6`, `t_cena_7`, `desayuno_1`, `desayuno_2`, `desayuno_3`, `desayuno_4`, `desayuno_5`, `desayuno_6`, `desayuno_7`, `colacion1_1`, `colacion1_2`, `colacion1_3`, `colacion1_4`, `colacion1_5`, `colacion1_6`, `colacion1_7`, `comida_1`, `comida_2`, `comida_3`, `comida_4`, `comida_5`, `comida_6`, `comida_7`, `colacion2_1`, `colacion2_2`, `colacion2_3`, `colacion2_4`, `colacion2_5`, `colacion2_6`, `colacion2_7`, `cena_1`, `cena_2`, `cena_3`, `cena_4`, `cena_5`, `cena_6`, `cena_7`, `notas`) VALUES
+(1, 'Titulo 1', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `dietas_1600`
+--
+
+CREATE TABLE `dietas_1600` (
+  `id` int(2) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `fecha` varchar(10) NOT NULL,
+  `t_desayuno_1` varchar(60) NOT NULL,
+  `t_desayuno_2` varchar(60) NOT NULL,
+  `t_desayuno_3` varchar(60) NOT NULL,
+  `t_desayuno_4` varchar(60) NOT NULL,
+  `t_desayuno_5` varchar(60) NOT NULL,
+  `t_desayuno_6` varchar(60) NOT NULL,
+  `t_desayuno_7` varchar(60) NOT NULL,
+  `t_colacion1_1` varchar(60) NOT NULL,
+  `t_colacion1_2` varchar(60) NOT NULL,
+  `t_colacion1_3` varchar(60) NOT NULL,
+  `t_colacion1_4` varchar(60) NOT NULL,
+  `t_colacion1_5` varchar(60) NOT NULL,
+  `t_colacion1_6` varchar(60) NOT NULL,
+  `t_colacion1_7` varchar(60) NOT NULL,
+  `t_comida_1` varchar(60) NOT NULL,
+  `t_comida_2` varchar(60) NOT NULL,
+  `t_comida_3` varchar(60) NOT NULL,
+  `t_comida_4` varchar(60) NOT NULL,
+  `t_comida_5` varchar(60) NOT NULL,
+  `t_comida_6` varchar(60) NOT NULL,
+  `t_comida_7` varchar(60) NOT NULL,
+  `t_colacion2_1` varchar(60) NOT NULL,
+  `t_colacion2_2` varchar(60) NOT NULL,
+  `t_colacion2_3` varchar(60) NOT NULL,
+  `t_colacion2_4` varchar(60) NOT NULL,
+  `t_colacion2_5` varchar(60) NOT NULL,
+  `t_colacion2_6` varchar(60) NOT NULL,
+  `t_colacion2_7` varchar(60) NOT NULL,
+  `t_cena_1` varchar(60) NOT NULL,
+  `t_cena_2` varchar(60) NOT NULL,
+  `t_cena_3` varchar(60) NOT NULL,
+  `t_cena_4` varchar(60) NOT NULL,
+  `t_cena_5` varchar(60) NOT NULL,
+  `t_cena_6` varchar(60) NOT NULL,
+  `t_cena_7` varchar(60) NOT NULL,
+  `desayuno_1` varchar(300) NOT NULL,
+  `desayuno_2` varchar(300) NOT NULL,
+  `desayuno_3` varchar(300) NOT NULL,
+  `desayuno_4` varchar(300) NOT NULL,
+  `desayuno_5` varchar(300) NOT NULL,
+  `desayuno_6` varchar(300) NOT NULL,
+  `desayuno_7` varchar(300) NOT NULL,
+  `colacion1_1` varchar(300) NOT NULL,
+  `colacion1_2` varchar(300) NOT NULL,
+  `colacion1_3` varchar(300) NOT NULL,
+  `colacion1_4` varchar(300) NOT NULL,
+  `colacion1_5` varchar(300) NOT NULL,
+  `colacion1_6` varchar(300) NOT NULL,
+  `colacion1_7` varchar(300) NOT NULL,
+  `comida_1` varchar(300) NOT NULL,
+  `comida_2` varchar(300) NOT NULL,
+  `comida_3` varchar(300) NOT NULL,
+  `comida_4` varchar(300) NOT NULL,
+  `comida_5` varchar(300) NOT NULL,
+  `comida_6` varchar(300) NOT NULL,
+  `comida_7` varchar(300) NOT NULL,
+  `colacion2_1` varchar(300) NOT NULL,
+  `colacion2_2` varchar(300) NOT NULL,
+  `colacion2_3` varchar(300) NOT NULL,
+  `colacion2_4` varchar(300) NOT NULL,
+  `colacion2_5` varchar(300) NOT NULL,
+  `colacion2_6` varchar(300) NOT NULL,
+  `colacion2_7` varchar(300) NOT NULL,
+  `cena_1` varchar(300) NOT NULL,
+  `cena_2` varchar(300) NOT NULL,
+  `cena_3` varchar(300) NOT NULL,
+  `cena_4` varchar(300) NOT NULL,
+  `cena_5` varchar(300) NOT NULL,
+  `cena_6` varchar(300) NOT NULL,
+  `cena_7` varchar(300) NOT NULL,
+  `notas` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `dietas_1600`
+--
+
+INSERT INTO `dietas_1600` (`id`, `titulo`, `fecha`, `t_desayuno_1`, `t_desayuno_2`, `t_desayuno_3`, `t_desayuno_4`, `t_desayuno_5`, `t_desayuno_6`, `t_desayuno_7`, `t_colacion1_1`, `t_colacion1_2`, `t_colacion1_3`, `t_colacion1_4`, `t_colacion1_5`, `t_colacion1_6`, `t_colacion1_7`, `t_comida_1`, `t_comida_2`, `t_comida_3`, `t_comida_4`, `t_comida_5`, `t_comida_6`, `t_comida_7`, `t_colacion2_1`, `t_colacion2_2`, `t_colacion2_3`, `t_colacion2_4`, `t_colacion2_5`, `t_colacion2_6`, `t_colacion2_7`, `t_cena_1`, `t_cena_2`, `t_cena_3`, `t_cena_4`, `t_cena_5`, `t_cena_6`, `t_cena_7`, `desayuno_1`, `desayuno_2`, `desayuno_3`, `desayuno_4`, `desayuno_5`, `desayuno_6`, `desayuno_7`, `colacion1_1`, `colacion1_2`, `colacion1_3`, `colacion1_4`, `colacion1_5`, `colacion1_6`, `colacion1_7`, `comida_1`, `comida_2`, `comida_3`, `comida_4`, `comida_5`, `comida_6`, `comida_7`, `colacion2_1`, `colacion2_2`, `colacion2_3`, `colacion2_4`, `colacion2_5`, `colacion2_6`, `colacion2_7`, `cena_1`, `cena_2`, `cena_3`, `cena_4`, `cena_5`, `cena_6`, `cena_7`, `notas`) VALUES
+(1, 'Titulo 1', '2016-11-14', 'fruta', 'cereal', 'yogurth', 'avena', 'cafe', 'omelette', 'vegetales', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'Ejemplo nota'),
+(2, 'Ejemplo titulo 2', '2016-11-13', 'taquito', 'xasd', 'assascsc', 'cdsccc', 'dcdscc', 'scsdc', 'dcdscsdcdsc', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'Ejemplo nota 2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `dietas_1800`
+--
+
+CREATE TABLE `dietas_1800` (
+  `id` int(2) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `fecha` varchar(10) NOT NULL,
+  `t_desayuno_1` varchar(60) NOT NULL,
+  `t_desayuno_2` varchar(60) NOT NULL,
+  `t_desayuno_3` varchar(60) NOT NULL,
+  `t_desayuno_4` varchar(60) NOT NULL,
+  `t_desayuno_5` varchar(60) NOT NULL,
+  `t_desayuno_6` varchar(60) NOT NULL,
+  `t_desayuno_7` varchar(60) NOT NULL,
+  `t_colacion1_1` varchar(60) NOT NULL,
+  `t_colacion1_2` varchar(60) NOT NULL,
+  `t_colacion1_3` varchar(60) NOT NULL,
+  `t_colacion1_4` varchar(60) NOT NULL,
+  `t_colacion1_5` varchar(60) NOT NULL,
+  `t_colacion1_6` varchar(60) NOT NULL,
+  `t_colacion1_7` varchar(60) NOT NULL,
+  `t_comida_1` varchar(60) NOT NULL,
+  `t_comida_2` varchar(60) NOT NULL,
+  `t_comida_3` varchar(60) NOT NULL,
+  `t_comida_4` varchar(60) NOT NULL,
+  `t_comida_5` varchar(60) NOT NULL,
+  `t_comida_6` varchar(60) NOT NULL,
+  `t_comida_7` varchar(60) NOT NULL,
+  `t_colacion2_1` varchar(60) NOT NULL,
+  `t_colacion2_2` varchar(60) NOT NULL,
+  `t_colacion2_3` varchar(60) NOT NULL,
+  `t_colacion2_4` varchar(60) NOT NULL,
+  `t_colacion2_5` varchar(60) NOT NULL,
+  `t_colacion2_6` varchar(60) NOT NULL,
+  `t_colacion2_7` varchar(60) NOT NULL,
+  `t_cena_1` varchar(60) NOT NULL,
+  `t_cena_2` varchar(60) NOT NULL,
+  `t_cena_3` varchar(60) NOT NULL,
+  `t_cena_4` varchar(60) NOT NULL,
+  `t_cena_5` varchar(60) NOT NULL,
+  `t_cena_6` varchar(60) NOT NULL,
+  `t_cena_7` varchar(60) NOT NULL,
+  `desayuno_1` varchar(300) NOT NULL,
+  `desayuno_2` varchar(300) NOT NULL,
+  `desayuno_3` varchar(300) NOT NULL,
+  `desayuno_4` varchar(300) NOT NULL,
+  `desayuno_5` varchar(300) NOT NULL,
+  `desayuno_6` varchar(300) NOT NULL,
+  `desayuno_7` varchar(300) NOT NULL,
+  `colacion1_1` varchar(300) NOT NULL,
+  `colacion1_2` varchar(300) NOT NULL,
+  `colacion1_3` varchar(300) NOT NULL,
+  `colacion1_4` varchar(300) NOT NULL,
+  `colacion1_5` varchar(300) NOT NULL,
+  `colacion1_6` varchar(300) NOT NULL,
+  `colacion1_7` varchar(300) NOT NULL,
+  `comida_1` varchar(300) NOT NULL,
+  `comida_2` varchar(300) NOT NULL,
+  `comida_3` varchar(300) NOT NULL,
+  `comida_4` varchar(300) NOT NULL,
+  `comida_5` varchar(300) NOT NULL,
+  `comida_6` varchar(300) NOT NULL,
+  `comida_7` varchar(300) NOT NULL,
+  `colacion2_1` varchar(300) NOT NULL,
+  `colacion2_2` varchar(300) NOT NULL,
+  `colacion2_3` varchar(300) NOT NULL,
+  `colacion2_4` varchar(300) NOT NULL,
+  `colacion2_5` varchar(300) NOT NULL,
+  `colacion2_6` varchar(300) NOT NULL,
+  `colacion2_7` varchar(300) NOT NULL,
+  `cena_1` varchar(300) NOT NULL,
+  `cena_2` varchar(300) NOT NULL,
+  `cena_3` varchar(300) NOT NULL,
+  `cena_4` varchar(300) NOT NULL,
+  `cena_5` varchar(300) NOT NULL,
+  `cena_6` varchar(300) NOT NULL,
+  `cena_7` varchar(300) NOT NULL,
+  `notas` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `dietas_1800`
+--
+
+INSERT INTO `dietas_1800` (`id`, `titulo`, `fecha`, `t_desayuno_1`, `t_desayuno_2`, `t_desayuno_3`, `t_desayuno_4`, `t_desayuno_5`, `t_desayuno_6`, `t_desayuno_7`, `t_colacion1_1`, `t_colacion1_2`, `t_colacion1_3`, `t_colacion1_4`, `t_colacion1_5`, `t_colacion1_6`, `t_colacion1_7`, `t_comida_1`, `t_comida_2`, `t_comida_3`, `t_comida_4`, `t_comida_5`, `t_comida_6`, `t_comida_7`, `t_colacion2_1`, `t_colacion2_2`, `t_colacion2_3`, `t_colacion2_4`, `t_colacion2_5`, `t_colacion2_6`, `t_colacion2_7`, `t_cena_1`, `t_cena_2`, `t_cena_3`, `t_cena_4`, `t_cena_5`, `t_cena_6`, `t_cena_7`, `desayuno_1`, `desayuno_2`, `desayuno_3`, `desayuno_4`, `desayuno_5`, `desayuno_6`, `desayuno_7`, `colacion1_1`, `colacion1_2`, `colacion1_3`, `colacion1_4`, `colacion1_5`, `colacion1_6`, `colacion1_7`, `comida_1`, `comida_2`, `comida_3`, `comida_4`, `comida_5`, `comida_6`, `comida_7`, `colacion2_1`, `colacion2_2`, `colacion2_3`, `colacion2_4`, `colacion2_5`, `colacion2_6`, `colacion2_7`, `cena_1`, `cena_2`, `cena_3`, `cena_4`, `cena_5`, `cena_6`, `cena_7`, `notas`) VALUES
+(1, 'Titulo 1', '2016-11-14', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'Ejemplo nota 3'),
+(2, 'Ejemplo titulo 2', '2016-11-13', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'Ejemplo nota 4'),
+(3, 'Asdf', '2016-11-20', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sisisi'),
+(4, 'Prueba final', '2016-11-20', 'tit des 1', '', '', '', '', '', '', 'tit col 1', '', '', '', '', '', '', 'tit com 1', '', '', '', '', '', '', 'tit col2 1', '', '', '', '', '', '', 'tit cena 1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'No por el momento');
 
 -- --------------------------------------------------------
 
@@ -69,7 +563,9 @@ INSERT INTO `notas` (`id`, `titulo`, `texto`, `fecha`, `hora`, `tipo`) VALUES
 (5, 'Titulo 5.0', 'Texto 5', '2016-10-31', '18:06:15', 'Sin tipo'),
 (6, 'XXXXX', 'XXXXXXXX', '2016-10-29', '00:00:04', 'Sin tipo'),
 (7, 'Titulin', 'Contenido x', '2016-10-29', '02:49:18', 'Urgente'),
-(9, 'Ventanita 3.0', 'Texto de ventanita', '2016-10-31', '18:06:31', 'Suceso');
+(9, 'Ventanita 3.0', 'Texto de ventanita', '2016-10-31', '18:06:31', 'Suceso'),
+(10, 'Notita', 'Contenido de la nota', '2016-11-15', '01:00:04', 'Positiva'),
+(11, 'Ejemplo de nota', 'Contenido de la nota', '2016-11-15', '01:00:40', 'Alerta');
 
 -- --------------------------------------------------------
 
@@ -316,6 +812,42 @@ ALTER TABLE `citas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `comidas_predeterminadas`
+--
+ALTER TABLE `comidas_predeterminadas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `dietas_1000`
+--
+ALTER TABLE `dietas_1000`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `dietas_1200`
+--
+ALTER TABLE `dietas_1200`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `dietas_1400`
+--
+ALTER TABLE `dietas_1400`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `dietas_1600`
+--
+ALTER TABLE `dietas_1600`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `dietas_1800`
+--
+ALTER TABLE `dietas_1800`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `notas`
 --
 ALTER TABLE `notas`
@@ -365,12 +897,42 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT de la tabla `comidas_predeterminadas`
+--
+ALTER TABLE `comidas_predeterminadas`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `dietas_1000`
+--
+ALTER TABLE `dietas_1000`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de la tabla `dietas_1200`
+--
+ALTER TABLE `dietas_1200`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `dietas_1400`
+--
+ALTER TABLE `dietas_1400`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `dietas_1600`
+--
+ALTER TABLE `dietas_1600`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `dietas_1800`
+--
+ALTER TABLE `dietas_1800`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
